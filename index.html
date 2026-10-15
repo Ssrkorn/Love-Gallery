@@ -1,0 +1,715 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>มังกร & แยม 💕</title>
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff6f0;--card:#fffdfa;--ink:#5a4048;--line:#5a4048;--pink:#ffc2d1;--pink2:#ff8fab;--mint:#c4ebdc;--acc:#c0305a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2b2024;--card:#3a2b31;--ink:#ffe9ee;--line:#ffe9ee;--pink:#a8546d;--mint:#4d7a6a;--acc:#ff9db8}}
+:root[data-theme="dark"]{--bg:#2b2024;--card:#3a2b31;--ink:#ffe9ee;--line:#ffe9ee;--pink:#a8546d;--mint:#4d7a6a;--acc:#ff9db8}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:'Mali','Sarabun',sans-serif;color:var(--ink);background:var(--bg) radial-gradient(rgba(255,143,171,.28) 1.5px,transparent 1.6px) 0 0/24px 24px;min-height:100vh}
+[hidden]{display:none!important}
+.scr{display:none;padding:12px}.scr.on{display:block}
+#safe.on{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center}
+.wrap{max-width:440px;margin:0 auto}
+.b{font:inherit;border:3px solid var(--line);background:var(--card);color:var(--ink);border-radius:14px;padding:6px 12px;cursor:pointer;box-shadow:0 3px 0 var(--line)}
+.b:active{transform:translateY(3px);box-shadow:none}.pk{background:var(--pink)}
+#bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:8px;background:var(--bg)}
+h1{font-size:22px;margin:0 0 4px}
+.safe{position:relative;width:230px;height:210px;background:var(--mint);border:4px solid var(--line);border-radius:28px;margin:12px 0 18px}
+.in{position:absolute;inset:0;display:grid;place-items:center;font-size:54px}
+.door{position:absolute;inset:10px;background:var(--pink);border:4px solid var(--line);border-radius:20px;transform-origin:left center;transition:transform 1.2s;display:grid;place-items:center;align-content:center;gap:10px}
+.open .door{transform:perspective(700px) rotateY(-115deg)}
+.face{font-size:26px;font-weight:600}
+.dial{width:54px;height:54px;border-radius:50%;border:4px solid var(--line);background:var(--card);display:grid;place-items:center;font-size:22px}
+.shake{animation:sh .4s}@keyframes sh{25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
+#dots{display:flex;gap:8px;margin-bottom:12px;justify-content:center}
+#dots i{width:16px;height:16px;border-radius:50%;border:3px solid var(--line)}#dots i.f{background:var(--pink2)}
+#kp{display:grid;grid-template-columns:repeat(3,64px);gap:10px}#kp button{height:52px;font-size:20px}
+#msg{min-height:22px;font-size:14px;margin-top:10px}
+.folder{position:relative;margin-top:30px;background:var(--pink);border:3px solid var(--line);border-radius:0 22px 22px 22px;padding:12px}
+.folder:before{content:'💕 Our Memories';position:absolute;top:-31px;left:-3px;background:var(--pink);border:3px solid var(--line);border-bottom:0;border-radius:14px 14px 0 0;padding:3px 14px;font-size:13px}
+.paper{position:relative;background:var(--card);border-radius:14px;padding:16px 14px 14px;animation:fl .35s}
+@keyframes fl{from{opacity:0;transform:translateX(22px) rotate(1.5deg)}to{opacity:1;transform:none}}
+.st{position:absolute;font-size:28px;pointer-events:auto;cursor:pointer;user-select:none;z-index:2}
+.s0{top:-8px;left:-6px;transform:rotate(-15deg)}.s1{top:-8px;right:-4px;transform:rotate(14deg)}.s2{bottom:70px;left:-8px;transform:rotate(-10deg)}.s3{bottom:70px;right:-6px;transform:rotate(12deg)}
+.ph{aspect-ratio:4/5;max-height:56vh;width:100%;margin:0 auto;border:3px solid var(--line);border-radius:14px;background:var(--bg) center/contain no-repeat;display:grid;place-items:center;cursor:default;font-size:15px}
+.ph.empty{border-style:dashed;cursor:pointer}.ph.empty:after{content:'📷 แตะเพื่อเพิ่มรูปหรือวิดีโอ'}
+body.edit .ph{outline:3px dashed var(--pink2);outline-offset:3px;cursor:pointer}
+.ph{position:relative}
+.dst{position:absolute;right:8px;bottom:8px;z-index:3;background:rgba(0,0,0,.55);color:#ffd9a0;font-family:'Courier New',monospace;font-weight:700;font-size:14px;letter-spacing:.5px;padding:2px 9px;border-radius:8px;pointer-events:none;text-shadow:0 0 4px rgba(255,160,60,.8)}
+.dtr{display:none;gap:6px;align-items:center;justify-content:center;margin-top:10px;font-size:14px;flex-wrap:wrap}body.edit .dtr{display:flex}
+.dtr input{font:inherit;border:2px solid var(--line);border-radius:10px;padding:3px 8px;background:var(--card);color:var(--ink);color-scheme:light dark}
+.cap,.letter{margin-top:12px;min-height:56px;padding:8px 10px;border-radius:12px;background:var(--bg);font-size:15px;line-height:1.6;white-space:pre-wrap;outline:none}
+.cap:empty:before,.letter:empty:before{content:'ข้อความเกี่ยวกับรูปนี้... (กด ✏️ เพื่อเขียน)';opacity:.5}
+body.edit .cap,body.edit .letter{outline:2px dashed var(--pink2)}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.card{background:var(--card);border:3px solid var(--line);border-radius:20px;padding:14px;margin:14px 0;text-align:center}
+.card h2{font-size:17px;margin:0 0 8px}
+.big{font-size:44px;font-weight:600;color:var(--acc);line-height:1.1}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.gal button{aspect-ratio:1;border:2px solid var(--line);border-radius:10px;background:var(--pink) center/cover;color:var(--ink);font:inherit;cursor:pointer}
+#area{position:relative;height:250px;overflow:hidden;border:3px dashed var(--line);border-radius:14px;margin-top:10px;touch-action:manipulation}
+.fall{position:absolute;top:-40px;font-size:34px;cursor:pointer;user-select:none;animation:fa linear forwards}
+@keyframes fa{to{top:260px}}
+.pop{position:fixed;pointer-events:none;z-index:99;transform:translate(-50%,-50%);animation:up .9s forwards}
+@keyframes up{to{transform:translate(-50%,-180%);opacity:0}}
+.edo{display:none;gap:10px;justify-content:center;margin-top:12px}body.edit .edo{display:flex}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{background:var(--pink);border:2px solid var(--line);border-radius:999px;padding:3px 12px;font-size:14px}
+.addr{display:flex;gap:6px;margin-top:8px}.pbar{height:14px;border:3px solid var(--line);border-radius:999px;overflow:hidden;background:var(--bg);margin:8px 0}.pbar i{display:block;height:100%;width:0;background:var(--pink2);transition:width .4s}
+body:not(.edit) .ea{display:none}
+.bt{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0}.bt .b{font-size:13px;padding:4px 10px}
+.rk{display:flex;align-items:center;gap:8px;padding:7px 4px;border-bottom:1px dashed var(--line)}.rk b{width:30px;text-align:center;flex:none}.rk em{font-style:normal;font-weight:600;color:var(--acc);flex:none}
+.ks{flex:1;line-height:1.4}.kr.dn .ks{text-decoration:line-through;opacity:.55}
+.hn{text-align:left;font-size:14px;padding:6px 0;border-bottom:1px dashed var(--line);white-space:pre-wrap}.hn b{display:block;font-size:12px;opacity:.6}
+.otg{font-weight:600;color:var(--acc);margin:10px 0 4px;font-size:14px}.oti{padding:7px 0;border-bottom:1px dashed var(--line);font-size:14px;line-height:1.5;white-space:pre-wrap}.oti img{display:block;max-width:100%;max-height:180px;border-radius:10px;margin-bottom:4px;cursor:pointer}
+.zxg{display:grid;grid-template-columns:repeat(3,76px);gap:8px;justify-content:center;margin:10px 0}.zxg .b{height:76px;font-size:34px;padding:0}
+#ztw{display:flex;flex-direction:column;align-items:center;gap:10px;margin:10px 0}#ztw .zt{width:100%;height:84px;font-size:24px}#ztc{min-height:44px;font-weight:600;display:grid;place-items:center}
+.zt2{transform:rotate(180deg)}.zt2:active{transform:rotate(180deg) translateY(3px)}
+#zsc{display:block;margin:10px auto;max-width:100%;border:3px solid var(--line);border-radius:14px;touch-action:none;background:var(--bg)}
+.zpad{display:grid;grid-template-columns:repeat(3,56px);gap:6px;justify-content:center;margin:8px 0}.zpad .b{height:48px;padding:0;font-size:20px}
+#fx{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}#fx span{position:absolute;top:-8vh;animation:pt linear infinite}
+@keyframes pt{to{transform:translateY(112vh) rotate(360deg)}}@media(prefers-reduced-motion:reduce){#fx{display:none}}
+.mas{display:inline-block;cursor:pointer;user-select:none;margin:0 6px}.mas.jp{animation:jp .5s}@keyframes jp{40%{transform:translateY(-18px) scale(1.15)}}
+#xkr{display:grid;grid-template-columns:repeat(auto-fill,minmax(135px,1fr));gap:8px;margin-top:10px;text-align:left}
+.pc{background:var(--bg);border:3px solid var(--line);border-radius:14px;padding:10px;font-size:14px;line-height:1.5;animation:fl .45s backwards}.pc b{display:block;font-size:13px;margin-bottom:4px}.pc.rd b{color:var(--acc)}
+.pkc{container-type:inline-size;position:relative;aspect-ratio:5/7;background:#fff;border:2px solid #5a4048;border-radius:9%/6.5%;overflow:hidden;font-family:Georgia,serif;font-weight:700}
+.pkc .cn{position:absolute;left:8%;top:5%;font-style:normal;font-size:20cqw;line-height:1.05;text-align:center}.pkc .cn.br{left:auto;top:auto;right:8%;bottom:5%;transform:rotate(180deg)}
+.pkc .pp{position:absolute;inset:16% 26%}.pkc .pip{position:absolute;transform:translate(-50%,-50%);font-size:20cqw;line-height:1;font-weight:400}
+.pkc .pip.dn{transform:translate(-50%,-50%) rotate(180deg)}.pkc .pip.big{font-size:44cqw;left:50%;top:50%}
+.dk{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:6px;margin:10px 0}
+.sl{perspective:500px;aspect-ratio:5/7;cursor:pointer}.f3{position:relative;width:100%;height:100%;transition:transform .55s;transform-style:preserve-3d}
+.sl.on .f3{transform:rotateY(180deg)}.sl:not(.on):hover .f3{transform:translateY(-4px)}.sl.on{cursor:default}
+.f3>*{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}.f3 .fr{transform:rotateY(180deg)}
+.bk{border:2px solid var(--line);border-radius:9%/6.5%;background:repeating-linear-gradient(45deg,var(--pink) 0 5px,var(--card) 5px 10px);display:grid;place-items:center;color:var(--pink2);font-size:20px}
+.rv{background:var(--bg);border:3px solid var(--line);border-radius:14px;padding:10px;text-align:center;font-size:14px;line-height:1.5;animation:fl .45s}.rv .pkc{width:64%;margin:0 auto 8px}.rv b{display:block;font-size:13px;margin-bottom:4px}
+#thb{position:fixed;left:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50;width:46px;height:46px;border-radius:50%;padding:0;font-size:22px}
+#thp{position:fixed;left:12px;bottom:calc(66px + env(safe-area-inset-bottom,0px));z-index:50;background:var(--card);border:3px solid var(--line);border-radius:16px;padding:10px;max-width:min(92vw,360px);max-height:60vh;overflow-y:auto;display:flex;flex-wrap:wrap;gap:6px}#thp .b{font-size:13px;padding:4px 10px}
+#sgb{position:fixed;left:66px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:50;width:46px;height:46px;border-radius:50%;padding:0;font-size:22px}
+#sgp{position:fixed;left:12px;bottom:calc(66px + env(safe-area-inset-bottom,0px));z-index:50;background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px;width:min(92vw,340px);max-height:70vh;overflow-y:auto;font-size:13px}
+.ta{width:100%;font:inherit;border:3px solid var(--line);border-radius:12px;padding:8px 10px;margin:8px 0;background:var(--bg);color:var(--ink);resize:vertical}
+#kl{max-height:440px;overflow-y:auto;text-align:left}.kr{display:flex;align-items:center;gap:8px;padding:6px 4px;border-bottom:1px dashed var(--line)}.kr b{width:26px;font-size:12px;opacity:.6;text-align:right;flex:none}
+.kc{border:0;background:none;font-size:22px;cursor:pointer;padding:0;flex:none}.kt{flex:1;outline:none;line-height:1.4}.kr.dn .kt{text-decoration:line-through;opacity:.55}
+.kx{border:0;background:none;color:var(--ink);cursor:pointer;font-size:16px;flex:none}body.edit .kt{outline:2px dashed var(--pink2);border-radius:6px;padding:2px 4px}
+.addr input{flex:1;min-width:0;font:inherit;border:3px solid var(--line);border-radius:12px;padding:6px 10px;background:var(--bg);color:var(--ink)}
+.mem{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.cd{aspect-ratio:1;font-size:30px;border:3px solid var(--line);border-radius:12px;background:var(--pink);cursor:pointer;padding:0;color:var(--ink)}
+.cd.up{background:var(--card)}.cd.ok{background:var(--mint)}
+.rw{border:3px dashed var(--line);border-radius:14px;padding:10px;margin:8px 0;opacity:.55}
+.rw.on{opacity:1;background:var(--bg);border:3px solid var(--pink2)}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:100;background:var(--card);border:3px solid var(--line);border-radius:16px;padding:10px 16px;max-width:90%;text-align:center}
+#dec{text-align:center;font-size:22px;letter-spacing:8px;white-space:nowrap;overflow:hidden;padding-top:6px}#dec:empty{display:none}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.cl{min-height:46px;font:inherit;font-size:12px;line-height:1.2;border:2px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);padding:2px;cursor:pointer}.cl.t{background:var(--pink)}.cl.s{outline:3px solid var(--pink2)}
+#ss{position:fixed;inset:0;z-index:200;background:#000;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:12px;text-align:center}#ssc{white-space:pre-wrap}#ss img{max-width:100%;max-height:80vh;border-radius:12px}
+.cd{background-size:cover;background-position:center}
+
+/* ===== รองรับทุกอุปกรณ์ (มือถือ แท็บเล็ต คอม แนวตั้ง/แนวนอน) ===== */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@supports(height:100dvh){body{min-height:100dvh}#safe.on{min-height:100dvh}}
+.scr{padding:12px max(12px,env(safe-area-inset-right,0px)) 76px max(12px,env(safe-area-inset-left,0px))}
+@media(pointer:coarse){.b{min-height:44px}input,textarea,select{font-size:16px!important}}
+@media(min-width:700px){#album .wrap{max-width:560px}.ph{max-height:66vh}h1{font-size:26px}}
+@media(min-width:900px){#album .wrap{max-width:620px}#sum .wrap{max-width:960px;max-width:min(960px,100%);column-count:2;column-gap:18px}#sum .card{break-inside:avoid;margin:0 0 16px}}
+@media(min-width:1280px){#sum .wrap{max-width:1360px;column-count:3}}
+@media(orientation:landscape) and (max-height:520px) and (min-width:600px){#album .wrap{max-width:900px}.paper{display:grid;grid-template-columns:1.15fr 1fr;gap:12px;align-items:start}.paper .ph{grid-row:1/4;max-height:74vh}.paper .cap,.paper .dtr{margin-top:0}}
+</style></head><body>
+
+<div id="fx"></div><div id="dec"></div>
+<section id="safe" class="scr on">
+  <h1>🐲 มังกร & แยม 🍓</h1>
+  <div id="thn" style="font-size:15px;margin:2px 0 6px"></div><div style="font-size:14px">ใส่รหัสผ่านเพื่อเปิดตู้เซฟแห่งความทรงจำ</div>
+  <div class="safe" id="sf"><div class="in">💌</div>
+    <div class="door"><div class="face" id="face">• ᴗ •</div><div class="dial">♥</div></div></div>
+  <div id="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div id="kp"></div>
+  <div id="msg"></div>
+</section>
+
+<div id="bar" hidden>
+  <button class="b" id="bL">🔒</button><button class="b" id="bA">📖 อัลบั้ม</button>
+  <button class="b" id="bS">💌 รวมเรา</button><button class="b" id="bF">🌸</button><button class="b" id="bM">🎵</button><button class="b" id="bP">▶️ สไลด์</button><button class="b pk" id="bE">✏️ แก้ไข</button>
+</div>
+
+<section id="album" class="scr"><div class="wrap">
+  <div class="folder"><div class="paper" id="pg">
+    <span class="st s0"></span><span class="st s1"></span><span class="st s2"></span><span class="st s3"></span>
+    <div class="ph" id="ph"><span class="dst" id="dst" hidden></span></div><div class="dtr"><span>📅 วันที่ของรูป</span><input type="date" id="pdi"><button class="b" id="pdx" style="padding:2px 10px">ล้าง</button></div><div class="cap" id="cap"></div>
+  </div></div>
+  <div class="nav"><button class="b" id="pv">◀</button><button class="b" id="lk">🤍 0</button><span id="ct"></span><button class="b pk" id="nx">▶</button></div>
+  <div class="edo"><button class="b" id="gfa">🎁 ซ่อนของขวัญ</button><button class="b" id="ad">➕ เพิ่มหน้าใหม่</button><button class="b" id="dl">🗑️ ลบหน้านี้</button></div>
+</div></section>
+
+<section id="sum" class="scr"><div class="wrap">
+  <div class="card"><h2>🐲 เรารักกันมาแล้ว 🍓</h2><div class="big" id="days">0</div><div>วัน นับจาก 17 ต.ค. 2024</div><div id="xcd" style="margin-top:8px;font-size:14px;line-height:1.8"></div></div>
+  <div class="card"><h2>📅 ไทม์ไลน์ & วันสำคัญ</h2><div style="font-size:13px;opacity:.7">นับถอยหลัง/นับวันที่ผ่านมา · ติ๊ก 🔒 เพื่อทำแคปซูลเวลา (ซ่อนข้อความจนถึงวันนั้น)</div><div id="evl" style="text-align:left"></div><div class="ea"><div class="addr"><input id="evd" type="date"><input id="evt" placeholder="เรื่องที่เกิดขึ้น / ข้อความ..."></div><div class="addr" style="align-items:center"><label><input type="checkbox" id="evc"> 🔒 แคปซูลเวลา</label><button class="b" id="eva">➕ เพิ่ม</button></div></div></div>
+  <div class="card"><h2>🗓️ ปฏิทินความหวาน & อารมณ์</h2><div class="nav" style="margin:0 0 8px"><button class="b" id="cpv">◀</button><b id="cmt"></b><button class="b" id="cnx">▶</button></div><div class="cal" id="cal"></div><div id="cdt" style="margin-top:10px;font-size:14px"></div><div id="cmd"></div></div>
+  <div class="card"><h2>💞 มุมส่งรัก</h2><div id="xbub" style="min-height:44px;margin:4px 0">แตะน้องมังกรหรือน้องแยมได้เลย 💗</div><div style="font-size:64px;line-height:1.1"><span id="xm1" class="mas">🐲</span><span id="xhr" class="mas" style="font-size:40px">💗</span><span id="xm2" class="mas">🍓</span></div><div style="font-size:13px;margin-top:6px">แตะหัวใจส่งรัก · ส่งแล้ว <b id="xlc">0</b> ครั้ง</div></div>
+  <div class="card"><h2>💌 จดหมายถึงเธอ</h2><div class="letter" id="letter" style="text-align:left"></div><div class="ea addr" style="align-items:center"><span style="font-size:13px">🔒 ล็อกจดหมายจนถึงวันที่</span><input id="lud" type="date"></div></div>
+  <div class="card"><h2>📆 วันนี้เมื่อปีที่แล้ว</h2><div id="oty" style="text-align:left"></div></div>
+  <div class="card"><h2>📸 อัลบั้มของเรา</h2><div class="gal" id="gal"></div></div>
+  <div class="card"><h2>🎮 เกมรับหัวใจ</h2><div>แตะ 💗🍓🌷 (+1) เลี่ยง 💔 (-2) ภายใน 20 วินาที<br>🏆 ได้ 20 คะแนนขึ้นไป รับรางวัล!</div>
+    <div id="area"></div>
+    <div style="margin-top:8px">คะแนน: <b id="sc">0</b> · เวลา: <b id="tm">20</b> · สูงสุด: <b id="best">0</b></div>
+    <button class="b pk" id="go" style="margin-top:8px">▶ เริ่มเกม</button></div>
+  <div class="card"><h2>🧩 เกมจับคู่ความทรงจำ</h2><div>จับคู่ให้ครบภายใน 16 ครั้ง รับรางวัล! 🏆</div><div class="mem" id="mg"></div><div style="margin-top:8px">เปิดไปแล้ว: <b id="mm">0</b> ครั้ง <button class="b" id="mr" style="margin-left:8px">🔄 เริ่มใหม่</button></div></div>
+  <div class="card"><h2>❌⭕ XO มังกร vs แยม</h2><div style="font-size:13px;opacity:.7">🐲 กับ 🍓 ผลัดกันเล่น คนแพ้ต้องทำภารกิจน่ารักๆ ให้คนชนะ</div><div id="zxb" class="zxg"></div><div id="zxs" style="min-height:44px;margin:8px 0;font-weight:600"></div><button class="b pk" id="zxr">🔄 เริ่มใหม่</button></div>
+  <div class="card"><h2>⚡ แตะเร็วชิงหัวใจ (2 คน)</h2><div style="font-size:13px;opacity:.7">วางมือถือไว้ตรงกลาง นั่งคนละฝั่ง แตะปุ่มฝั่งตัวเองรัวๆ ภายใน 10 วินาที</div><div id="ztw"><button class="b zt zt2" id="ztB">🍓 0</button><div id="ztc">พร้อมไหม? กดเริ่มเลย</div><button class="b zt" id="ztA">🐲 0</button></div><button class="b pk" id="ztg">▶ เริ่ม</button></div>
+  <div class="card"><h2>🐍 งูกินหัวใจ</h2><div style="font-size:13px;opacity:.7">ปัดหน้าจอ กดลูกศร หรือใช้คีย์บอร์ด กิน 💗 ให้ได้เยอะที่สุด · ชนขอบหรือชนตัวเองจบเกม</div><canvas id="zsc" width="300" height="300"></canvas><div>คะแนน <b id="zss">0</b> · สูงสุด <b id="zsb">0</b></div><div class="zpad"><span></span><button class="b" data-z="0,-1">▲</button><span></span><button class="b" data-z="-1,0">◀</button><button class="b" data-z="0,1">▼</button><button class="b" data-z="1,0">▶</button></div><button class="b pk" id="zsg">▶ เริ่มเกม</button></div>
+  <div class="card"><h2>💘 ควิซคู่รัก</h2><div>ตอบถูกทุกข้อ รับรางวัล! 🏆</div><div id="qz"></div></div>
+  <div class="card"><h2>🎯 ภารกิจท้าทายประจำวัน</h2><div style="font-size:13px;opacity:.7">ทำภารกิจวันละ 1 ข้อด้วยกัน ทำต่อเนื่องเพื่อเก็บสตรีค 🔥 ภารกิจเปลี่ยนทุกวัน</div><div id="dcq" style="min-height:44px;margin:6px 0"></div><button class="b pk" id="dcb">✅ ทำภารกิจแล้ว</button><div style="margin-top:8px" id="dcs"></div></div>
+  <div class="card"><h2>🎡 วงล้อสุ่มเดท</h2><div style="position:relative;width:220px;height:220px;margin:14px auto"><div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);z-index:2;font-size:22px">🔻</div><div id="whl" style="position:relative;width:100%;height:100%;border-radius:50%;border:4px solid var(--line);transition:transform 3.5s cubic-bezier(.17,.67,.2,1)"></div></div><button class="b pk" id="whg">🎡 หมุน</button><div id="whr" style="min-height:36px;margin:8px 0;font-weight:600;color:var(--acc)"></div><div class="ea"><div style="font-weight:600;margin:8px 0;text-align:left">⚙️ ตัวเลือกบนวงล้อ</div><div id="whe" style="text-align:left"></div></div></div>
+  <div class="card"><h2>📍 ที่ที่เราเคยไป</h2><div id="pcl" style="text-align:left"></div><div class="ea"><div class="addr"><input id="pcn" placeholder="ชื่อสถานที่"><input id="pcd" type="date"></div><div class="addr"><input id="pcm" placeholder="ความทรงจำ..."><button class="b" id="pcp">📷 แนบรูป</button><button class="b" id="pca">➕</button></div><input type="file" id="pci" accept="image/*" hidden></div></div>
+  <div class="card"><h2>🏅 สถิติและป้ายรางวัลของเรา</h2><div id="sts" style="text-align:left;line-height:1.9"></div><div class="chips" id="bdg" style="margin-top:8px"></div><div style="font-size:12px;opacity:.65;margin-top:6px">แคปหน้าจอการ์ดนี้ส่งต่อได้เลย 📸</div></div>
+  <div class="card"><h2>🎵 เพลย์ลิสต์ของเรา</h2><div style="font-size:13px;opacity:.7">เพลงที่ฟังแล้วนึกถึงกัน · ใส่ลิงก์ YouTube/Spotify ได้ แตะชื่อเพลงเพื่อเปิด</div><div style="margin:8px 0"><button class="b pk" id="plr">🎲 สุ่มเพลง</button></div><div id="plx" style="min-height:24px;font-weight:600"></div><div id="pll" style="text-align:left"></div><div class="ea"><div class="addr"><input id="pln" placeholder="ชื่อเพลง - ศิลปิน"><input id="plu" placeholder="ลิงก์ (ไม่ใส่ก็ได้)"></div><div class="addr" style="align-items:center"><select id="plw" class="ta" style="width:auto;margin:0"><option>🐲</option><option>🍓</option><option>💞</option></select><input id="plm" placeholder="เพราะเพลงนี้..."><button class="b" id="pla">➕</button></div></div></div>
+  <div class="card"><h2>🔥 โหมดเฉพาะเรา</h2><button class="b pk" id="hkt">🔥 เปิด / ซ่อน</button><div id="hkb" hidden><div style="font-size:13px;opacity:.7;margin:8px 0">กิจกรรมหวานแซ่บสำหรับคู่รัก · ทุกข้อต้องสบายใจทั้งสองคน ข้ามข้อที่ไม่อยากทำได้เสมอ 💞</div><div class="big" style="font-size:28px" id="hkn"></div><div class="pbar"><i id="hkp"></i></div><button class="b pk" id="hkr">🎲 สุ่มกิจกรรม</button><div id="hkx" style="min-height:44px;margin:10px 0;font-weight:600;color:var(--acc)"></div><div id="hkl" style="text-align:left;max-height:340px;overflow-y:auto"></div><div class="addr ea"><input id="hki" placeholder="เพิ่มกิจกรรมใหม่..."><button class="b" id="hka">➕</button></div></div></div>
+  <div class="card"><h2>🕵️ เกมทายใจ</h2><div style="font-size:13px;opacity:.7">คนที่ 1 เลือกคำตอบลับ แล้วส่งมือถือให้คนที่ 2 ทาย</div><div id="xgm"></div></div>
+  <div class="card"><h2>🔮 ลูกแก้ววิเศษ</h2><div>คิดคำถามในใจ แล้วแตะลูกแก้ว</div><div id="xor" class="mas" style="font-size:64px;margin:8px 0">🔮</div><div id="xoa" style="min-height:30px;font-weight:600;color:var(--acc)"></div></div>
+  <div class="card"><h2>🎁 ตู้รางวัล (<span id="rwc">0</span>/3)</h2><div id="rw"></div><div style="font-size:13px;opacity:.7">กด ✏️ แก้ไข เพื่อเปลี่ยนข้อความคูปองที่ปลดล็อกแล้ว · ตู้รางวัลจะล็อกใหม่ทุกครั้งที่เปิดเว็บ</div></div>
+  
+  <div class="card"><h2>⭐ ของที่ชอบของเรา</h2><div style="display:flex;gap:8px;justify-content:center"><button class="b" id="ft0">🐲 มังกร</button><button class="b" id="ft1">🍓 แยม</button></div><div id="fv"></div></div>
+  <div class="card"><h2>✅ เช็คลิสต์ 100 กิจกรรมกับแฟน</h2><div style="font-size:13px;opacity:.7">แตะ ⬜ เพื่อติ๊ก · กด ✏️ แก้ไข ด้านบนเพื่อเพิ่ม ลบ หรือแก้ข้อความ</div><div class="big" style="font-size:28px;margin-top:6px" id="kn">0 / 100</div><div class="pbar"><i id="kb"></i></div><div style="display:flex;gap:6px;justify-content:center;margin-bottom:8px"><button class="b kf" data-f="0">ทั้งหมด</button><button class="b kf" data-f="2">ยังไม่ทำ</button><button class="b kf" data-f="1">ทำแล้ว</button></div><div class="addr ea"><input id="ki" placeholder="เพิ่มกิจกรรมใหม่..."><button class="b" id="kad">➕</button></div><div id="kl"></div></div>
+  <div class="card"><h2>🍬 ภารกิจความหวานวันนี้</h2><div class="big" style="font-size:30px" id="xsw">0</div><div style="font-size:13px" id="xlv"></div><div class="pbar"><i id="xsb"></i></div><div id="xsd"></div><div style="font-size:12px;opacity:.65">สุ่มใหม่ทุกวัน วันละ 2 ภารกิจ ทำเสร็จแล้วแตะ ⬜ รับ +10 🍬</div><div class="ea"><div style="font-weight:600;margin:12px 0 6px;text-align:left">⚙️ คลังภารกิจความหวาน (สุ่มจากตรงนี้)</div><div id="xsp"></div></div></div>
+  <div class="card"><h2>📝 โน๊ตวันนี้</h2><div style="font-size:13px" id="xnd"></div><textarea id="xnt" class="ta" rows="4" placeholder="วันนี้เกิดอะไรขึ้นบ้าง? จดความรู้สึกไว้ได้เลย..."></textarea><div class="addr" style="margin-top:12px"><input id="xns" placeholder="🔍 ค้นหาคำในโน๊ตเก่า..."></div><div class="addr"><input id="xnf" type="date"><button class="b" id="xnx">ล้างตัวกรอง</button></div><div style="font-size:12px;opacity:.65;margin:6px 0" id="xnc"></div><div id="xnh"></div></div>
+  <div class="card"><h2>🏆 บอร์ดอันดับ</h2><div class="bt" id="xbt"></div><div class="kt" id="xbn" style="font-weight:600"></div><div style="font-size:12px;opacity:.65;margin-bottom:4px">แตะ +1 เมื่อได้ยินหรือชอบคำนั้นอีก อันดับจะเรียงให้อัตโนมัติ</div><div id="xbl"></div><div class="addr ea"><input id="xbi" placeholder="เพิ่มคำพูดใหม่..."><button class="b" id="xba">➕</button></div><div class="ea" style="margin-top:10px"><button class="b" id="xbd">🗑️ ลบบอร์ดนี้</button></div></div>
+  <div class="card"><h2>🍜 วันนี้กินอะไรดี?</h2><div id="xfr" class="mas" style="font-size:30px;font-weight:600;min-height:44px;margin:8px 0;color:var(--acc)">❓</div><div><button class="b pk" id="xfg">🎲 สุ่มเมนู</button></div><div class="ea"><div style="font-weight:600;margin:12px 0 6px;text-align:left">⚙️ รายการอาหาร (แก้ ลบ เพิ่มได้)</div><div id="xfl" style="max-height:300px;overflow-y:auto;text-align:left"></div></div></div>
+  <div class="card"><h2>🃏 สุ่มการ์ดความรัก</h2><div style="font-size:13px;opacity:.7">♥ ต้องทำให้กัน · ♦ รางวัล · ♠ กิจกรรม · ♣ มุกจีบ</div><div class="addr" style="justify-content:center;align-items:center;margin:10px 0"><span>จั่ว</span><button class="b" id="xkm">−</button><b id="xkv" style="min-width:28px;font-size:20px">1</b><button class="b" id="xkp">＋</button><span>ใบ</span><button class="b pk" id="xkg">🃏 จั่วการ์ด</button></div><div style="font-size:13px">แตะไพ่ใบไหนก็ได้เพื่อเปิดดู · เหลือ <b id="xrm">52</b> ใบ <button class="b" id="xsh" style="padding:2px 10px;margin-left:6px">🔀 สับ/คว่ำใหม่</button></div><div class="dk" id="xdk"></div><div id="xkr"></div>
+    <div class="ea"><div style="font-weight:600;margin:14px 0 6px;text-align:left">⚙️ คลังการ์ด (<span id="xkc">52</span> ใบ)</div><div class="addr"><select id="xks" class="ta" style="width:auto;margin:0"><option value="♥">♥ ต้องทำให้กัน</option><option value="♦">♦ รางวัล</option><option value="♠">♠ กิจกรรม</option><option value="♣">♣ มุกจีบ</option><option value="★">★ อื่นๆ</option></select><input id="xki" placeholder="ข้อความการ์ดใหม่..."><button class="b" id="xka">➕</button></div><div id="xkl" style="max-height:340px;overflow-y:auto;text-align:left;margin-top:8px"></div><div style="margin-top:8px"><button class="b" id="xkd">↺ คืนค่าสำรับมาตรฐาน 52 ใบ</button></div></div></div>
+  <div class="card"><h2>🎙️ ไดอารี่เสียง</h2><div style="display:flex;gap:6px;justify-content:center;margin:6px 0"><button class="b xw pk" data-w="🐲">🐲 มังกร</button><button class="b xw" data-w="🍓">🍓 แยม</button><button class="b xw" data-w="💞">💞 ทั้งคู่</button></div><div><button class="b pk" id="xrc">⏺ อัดเสียง</button> <button class="b" id="xrf">📁 เลือกไฟล์เสียง</button></div><div id="xrt" style="min-height:22px;font-size:13px;margin:6px 0"></div><div class="addr"><input id="xvf" type="date"><button class="b" id="xvx">ล้างตัวกรอง</button></div><div id="xvl" style="max-height:340px;overflow-y:auto;text-align:left"></div><input type="file" id="xaf" accept="audio/*" hidden></div>
+  <div class="card"><h2>🎁 สุ่มเหตุผลที่เค้ารักเบบี๋</h2><div id="why" style="min-height:48px;margin-bottom:8px">กดปุ่มเลย 👇</div><button class="b pk" id="wy">🎲 สุ่ม</button><div class="ea"><div style="font-weight:600;margin:12px 0 6px;text-align:left">⚙️ รายการเหตุผล (แก้ ลบ เพิ่มได้)</div><div id="wyl" style="max-height:300px;overflow-y:auto;text-align:left"></div></div></div>
+</div></section>
+
+<input type="file" id="fi" accept="image/*,video/*" hidden>
+<div id="toast" hidden></div><div id="ss" hidden><img id="ssi" alt=""><div id="ssc"></div><small>แตะเพื่อปิด</small></div>
+<button class="b pk" id="thb">🎨</button><div id="thp" hidden></div>
+<button class="b" id="sgb">⚙️</button><div id="sgp" hidden><b>☁️ ซิงก์ข้อมูลข้ามเครื่อง</b><div id="sgt" style="margin:6px 0"></div><input id="sgu" class="ta" placeholder="Supabase URL เช่น https://xxxx.supabase.co"><input id="sgk" class="ta" placeholder="anon public key"><div style="display:flex;gap:6px;flex-wrap:wrap"><button class="b pk" id="sgs">💾 บันทึกและเชื่อมต่อ</button><button class="b" id="sga">⬆️ ส่งข้อมูลเครื่องนี้ขึ้นไป</button><button class="b" id="sgl">🔗 ลิงก์ให้แฟน</button><button class="b" id="rst">🧹 ล้างสถิติทดสอบ</button></div><input id="sgo" class="ta" placeholder="ลิงก์จะขึ้นที่นี่" readonly></div>
+<script>
+const $=s=>document.querySelector(s),PW='17102026';let N=20;
+let mem={},P=[],C=[],PD=[],L='',cur=0,ed=0,code='',best=0;
+const idb=new Promise(r=>{try{const q=indexedDB.open('mk',1);q.onupgradeneeded=()=>q.result.createObjectStore('k');q.onsuccess=()=>r(q.result);q.onerror=()=>r(null)}catch(e){r(null)}});
+const get=k=>idb.then(d=>new Promise(r=>{if(!d)return r(mem[k]);try{const q=d.transaction('k').objectStore('k').get(k);q.onsuccess=()=>r(q.result);q.onerror=()=>r()}catch(e){r(mem[k])}}));
+const loc=(k,v)=>{mem[k]=v;idb.then(d=>{try{d&&d.transaction('k','readwrite').objectStore('k').put(v,k)}catch(e){}})};
+const set=(k,v)=>{loc(k,v);rsy(k,v)};
+
+// ตู้เซฟ
+[1,2,3,4,5,6,7,8,9,'✕',0,'⌫'].forEach(k=>{const b=document.createElement('button');b.className='b';b.textContent=k;b.onclick=()=>key(k);$('#kp').append(b)});
+function key(k){if(k=='⌫')code=code.slice(0,-1);else if(k=='✕')code='';else if(code.length<8)code+=k;
+  document.querySelectorAll('#dots i').forEach((d,i)=>d.classList.toggle('f',i<code.length));
+  if(code.length==8)setTimeout(chk,150)}
+document.addEventListener('keydown',e=>{if($('#safe').classList.contains('on')){if(/^\d$/.test(e.key))key(+e.key);if(e.key=='Backspace')key('⌫')}
+  else if($('#album').classList.contains('on')){if(e.key=='ArrowRight')nxt();if(e.key=='ArrowLeft')prv()}});
+function chk(){const s=$('#sf');
+  if(code==PW){s.classList.add('open');$('#face').textContent='♥ ᴗ ♥';$('#msg').textContent='ยินดีต้อนรับค่ะ 💕';setTimeout(()=>{go('album');show(0);const c=oty();if(c)toast('📆 วันนี้เมื่อปีที่แล้วเรามีความทรงจำ '+c+' อย่าง · ดูที่หน้ารวมเรา 💞')},1500)}
+  else{s.classList.add('shake');$('#face').textContent='• ︵ •';$('#msg').textContent='ผิดนะ 🥺 ใบ้: วันครบรอบของเรา (วว ดด ปปปป ค.ศ.)';
+    setTimeout(()=>{s.classList.remove('shake');$('#face').textContent='• ᴗ •';key('✕')},700)}}
+
+// หน้าต่างๆ
+function go(n){['safe','album','sum'].forEach(s=>$('#'+s).classList.toggle('on',s==n));$('#bar').hidden=n=='safe';
+  if(n=='safe'){code='';$('#sf').classList.remove('open');$('#msg').textContent='';key('✕')}
+  if(n=='sum'){fill();rw();fav();kl();ex()}scrollTo(0,0)}
+$('#bL').onclick=()=>go('safe');$('#bA').onclick=()=>{go('album');show(cur)};$('#bS').onclick=()=>go('sum');
+$('#bE').onclick=()=>{ed=!ed;document.body.classList.toggle('edit',ed);$('#bE').textContent=ed?'✅ เสร็จ':'✏️ แก้ไข';
+  $('#cap').contentEditable=ed;$('#letter').contentEditable=ed;rw();fav();kl();ex()};
+const E=['🌷','✨','☁️','💗','🍓','⭐','🐻','🎀','🌼','🫧','🐲','🧸'];
+function show(i){cur=i;const p=$('#pg'),ph=$('#ph');p.style.animation='none';void p.offsetWidth;p.style.animation='';
+  ph.style.backgroundImage=P[i]?`url(${P[i]})`:'';ph.classList.toggle('empty',!P[i]&&!V[i]);vid(i);$('#cap').textContent=C[i]||'';pdr(i);
+  p.querySelectorAll('.gf').forEach(e=>e.remove());p.querySelectorAll('.st').forEach((s,k)=>{s.textContent=E[(i*3+k*5)%12];s.onclick=()=>{s.textContent=E[Math.random()*12|0]}});
+  $('#ct').textContent=`หน้า ${i+1} / ${N}`;lkb();gft(i);$('#nx').textContent=i==N-1?'ไปหน้ารวมเรา 💌':'▶';$('#pv').style.visibility=i?'visible':'hidden'}
+const pdf=d=>{if(!d)return'';const[y,m,dd]=d.split('-').map(Number);return new Date(y,m-1,dd).toLocaleDateString('th-TH',{day:'numeric',month:'short',year:'numeric'})};
+function pdr(i){const b=$('#dst'),d=PD[i]||'';b.textContent='📅 '+pdf(d);b.hidden=!d||(!P[i]&&!V[i]);$('#pdi').value=d}
+const pds=(i,d)=>{PD[i]=d||'';set('pd'+i,PD[i])};
+$('#pdi').onchange=e=>{pds(cur,e.target.value);pdr(cur)};
+$('#pdx').onclick=()=>{pds(cur,'');pdr(cur)};
+function nxt(){cur==N-1?go('sum'):show(cur+1)}function prv(){cur&&show(cur-1)}
+$('#nx').onclick=nxt;$('#pv').onclick=prv;
+$('#ad').onclick=()=>{P[N]=null;V[N]=null;C[N]='';PD[N]='';N++;set('N',N);show(N-1);toast('➕ เพิ่มหน้าที่ '+N+' แล้ว แตะรูปเพื่อใส่ภาพได้เลย')};
+let dc;
+$('#dl').onclick=()=>{const b=$('#dl');
+  if(N<2)return toast('ต้องเหลืออย่างน้อย 1 หน้านะ');
+  if(!dc){dc=setTimeout(()=>{dc=0;b.textContent='🗑️ ลบหน้านี้'},3000);b.textContent='⚠️ กดอีกครั้งเพื่อลบ';return}
+  clearTimeout(dc);dc=0;b.textContent='🗑️ ลบหน้านี้';
+  P.splice(cur,1);C.splice(cur,1);V.splice(cur,1);PD.splice(cur,1);N--;
+  for(let i=cur;i<N;i++){set('p'+i,P[i]||null);set('v'+i,V[i]||null);set('c'+i,C[i]||'');set('pd'+i,PD[i]||'')}
+  set('p'+N,null);set('v'+N,null);set('c'+N,'');set('pd'+N,'');set('N',N);show(Math.min(cur,N-1))};
+let tx=0;$('#pg').ontouchstart=e=>tx=e.touches[0].clientX;
+$('#pg').ontouchend=e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>60)d<0?nxt():prv()};
+$('#cap').oninput=()=>{C[cur]=$('#cap').textContent;set('c'+cur,C[cur])};
+$('#letter').oninput=()=>{L=$('#letter').textContent;set('L',L)};
+$('#ph').onclick=e=>{if(e.target.tagName=='VIDEO')return;if(ed||!(P[cur]||V[cur]))$('#fi').click()};
+$('#fi').onchange=async e=>{const f=e.target.files[0];if(!f)return;const lm=f.lastModified?new Date(f.lastModified):null,ld=lm?lm.getFullYear()+'-'+String(lm.getMonth()+1).padStart(2,'0')+'-'+String(lm.getDate()).padStart(2,'0'):'';if(ld&&!PD[cur])pds(cur,ld);
+  if(f.type.startsWith('video')){V[cur]=f;P[cur]=null;set('v'+cur,f);set('p'+cur,null);e.target.value='';show(cur);return}V[cur]=null;set('v'+cur,null);
+  const im=new Image();im.onload=()=>{const s=Math.min(1,1200/Math.max(im.width,im.height)),c=document.createElement('canvas');
+    c.width=im.width*s;c.height=im.height*s;c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+    P[cur]=c.toDataURL('image/jpeg',.82);set('p'+cur,P[cur]);show(cur)};im.src=URL.createObjectURL(f);e.target.value=''};
+
+// หน้ารวมเรา
+function fill(){oty();$('#days').textContent=Math.floor((Date.now()-new Date(2024,9,17))/864e5);
+  $('#letter').textContent=L||'ถึงคนที่รักที่สุด...\nขอบคุณที่อยู่ข้างกันมาสองปีเต็ม (กด ✏️ แก้ไข เพื่อเขียนจดหมายของคุณเอง)';
+  const g=$('#gal');g.innerHTML='';for(let i=0;i<N;i++){const b=document.createElement('button');
+    if(P[i])b.style.backgroundImage=`url(${P[i]})`;else b.textContent=V[i]?'🎬':i+1;if(PD[i])b.title=pdf(PD[i]);b.onclick=()=>{go('album');show(i)};g.append(b)}
+  $('#best').textContent=best}
+let W=['เพราะเบบี๋ทำให้วันธรรมดาของเค้าพิเศษขึ้นทุกวัน', 'เพราะรอยยิ้มของเบบี๋ทำให้เค้าใจฟูทุกที', 'เพราะอยู่ข้างเบบี๋แล้วเค้าสบายใจที่สุด', 'เพราะเบบี๋เป็นเบบี๋ แค่นี้เค้าก็รักแล้ว', 'เพราะเสียงหัวเราะของเบบี๋', 'เพราะเบบี๋เข้าใจเค้าเสมอ', 'เพราะเบบี๋คือที่พักใจของเค้า', 'เพราะเค้าอยากมีเบบี๋อยู่ในทุกปีต่อๆ ไป', 'เพราะเบบี๋ใจดีกับเค้าเสมอ ต่อให้เค้างอแงแค่ไหน', 'เพราะกอดของเบบี๋อุ่นที่สุดในโลก', 'เพราะเบบี๋ทำให้เค้าอยากเป็นคนที่ดีขึ้นทุกวัน', 'เพราะเบบี๋คือคนแรกที่เค้านึกถึงทุกเช้า'];
+$('#wy').onclick=()=>{if(!W.length)return toast('ยังไม่มีเหตุผล (กด ✏️ แก้ไข เพื่อเพิ่ม)');$('#why').textContent='💗 '+W[Math.random()*W.length|0]};
+
+// เกมรับหัวใจ
+let sc=0,t=0,iv,sp;
+$('#go').onclick=()=>{clearInterval(iv);clearInterval(sp);sc=0;t=20;$('#sc').textContent=0;$('#tm').textContent=t;$('#area').innerHTML='';
+  sp=setInterval(spawn,480);
+  iv=setInterval(()=>{$('#tm').textContent=--t;if(t<=0){clearInterval(iv);clearInterval(sp);
+    if(sc>best){best=sc;set('best',best);$('#best').textContent=best}
+    if(sc>=20)win(0);
+    $('#area').innerHTML=`<div style="padding-top:90px;font-size:20px">จบเกม! ได้ ${sc} คะแนน ${sc>=20?'🏆 เก่งมาก':'💕 ลองอีกรอบนะ'}</div>`}},1000)};
+function spawn(){const e=document.createElement('span'),k=['💗','💗','🍓','🌷','💔'][Math.random()*5|0];
+  e.className='fall';e.textContent=k;e.style.left=Math.random()*85+'%';e.style.animationDuration=(2+Math.random()*1.5)+'s';
+  e.onpointerdown=ev=>{ev.stopPropagation();sc+=k=='💔'?-2:1;$('#sc').textContent=sc;e.remove()};
+  $('#area').append(e);setTimeout(()=>e.remove(),4000)}
+
+// รางวัล
+const RW=['🎟️ คูปองกอดแน่นๆ 1 ครั้ง','🎟️ คูปองเลือกร้านอาหารมื้อหน้า','🎟️ คูปองขออะไรก็ได้ 1 ข้อ'],RN=['เกมรับหัวใจ','เกมจับคู่','ควิซคู่รัก'];
+let R=[0,0,0],RT=['','',''],tt;
+function toast(t){const e=$('#toast');e.textContent=t;e.hidden=0;clearTimeout(tt);tt=setTimeout(()=>e.hidden=1,4000)}
+function rw(){const b=$('#rw');b.innerHTML='';RW.forEach((d,i)=>{const e=document.createElement('div'),s=document.createElement('span');e.className='rw'+(R[i]?' on':'');
+  s.textContent=R[i]?(RT[i]||d):'🔒 ชนะ'+RN[i]+'เพื่อปลดล็อก';
+  if(R[i]){s.contentEditable=ed;s.style.outline='none';s.oninput=()=>{RT[i]=s.textContent;set('rt'+i,RT[i])}}
+  e.append(s);b.append(e)});$('#rwc').textContent=R.filter(x=>x).length}
+function win(i){if(R[i])return;R[i]=1;rw();
+  for(let k=0;k<24;k++)setTimeout(()=>{const h=document.createElement('span');h.className='pop';h.textContent=['💗','✨','🎉','🏆'][k%4];h.style.left=Math.random()*100+'vw';h.style.top=(40+Math.random()*40)+'vh';document.body.append(h);setTimeout(()=>h.remove(),900)},k*50);
+  toast('🏆 ชนะ'+RN[i]+'! ได้ '+(RT[i]||RW[i])+' — ดูที่ตู้รางวัลด้านล่าง 🎁')}
+// เกมจับคู่
+let mc=[],mf=[],mm=0,ml=0;
+function mstart(){const pk=[...Array(N).keys()].filter(i=>P[i]).sort(()=>Math.random()-.5).slice(0,8).map(i=>'#'+i),a=[...pk,...['🐲','🍓','💗','🌷','🧸','🎀','⭐','🫧'].slice(0,8-pk.length)];mc=[...a,...a].sort(()=>Math.random()-.5);mf=[];mm=0;ml=0;$('#mm').textContent=0;
+  const g=$('#mg');g.innerHTML='';mc.forEach((c,i)=>{const b=document.createElement('button');b.className='cd';b.onclick=()=>flip(i,b);g.append(b)})}
+function flip(i,b){if(b.textContent||mf.length>1)return;const k=mc[i];b.textContent=k[0]=='#'?'\u200b':k;if(k[0]=='#'){b.style.backgroundImage=`url(${P[k.slice(1)]})`;b.style.backgroundSize='cover'}b.classList.add('up');mf.push([i,b]);
+  if(mf.length<2)return;$('#mm').textContent=++mm;const[[x,p],[y,q]]=mf;
+  if(mc[x]==mc[y]){mf=[];p.classList.add('ok');q.classList.add('ok');
+    if(++ml==8){if(mm<=16)win(1);else toast('ใช้ไป '+mm+' ครั้ง ต้องไม่เกิน 16 ครั้งถึงจะได้รางวัล ลองใหม่นะ 💪')}}
+  else setTimeout(()=>{p.textContent=q.textContent='';p.style.backgroundImage=q.style.backgroundImage='';p.classList.remove('up');q.classList.remove('up');mf=[]},700)}
+$('#mr').onclick=mstart;
+// ควิซ (แก้คำถามได้ที่นี่: [คำถาม,[ตัวเลือก],ลำดับคำตอบที่ถูก เริ่มที่ 0])
+let Q=[['เราเริ่มคบกันวันที่เท่าไหร่?',['17 ต.ค. 2024','17 พ.ย. 2024','7 ต.ค. 2024'],0],['ปีนี้เป็นครบรอบกี่ปี?',['1 ปี','2 ปี','3 ปี'],1],['ใครน่ารักที่สุดในโลก?',['มังกร','แยม','ทั้งคู่เลย 💕'],2]];
+let qi=0,qs=0;
+function qshow(){const q=Q[qi],b=$('#qz');if(ed){qi=qs=0;return qed(b)}
+  if(!q){if(Q.length&&qs==Q.length)win(2);b.innerHTML=`<div style="margin:8px 0">ตอบถูก ${qs}/${Q.length} ${qs==Q.length?'🎉':'ลองใหม่นะ 💪'}</div>`;
+    const r=document.createElement('button');r.className='b';r.textContent='🔄 เล่นใหม่';r.onclick=()=>{qi=qs=0;qshow()};b.append(r);return}
+  b.innerHTML=`<div style="margin:8px 0">${qi+1}. ${q[0]}</div>`;
+  q[1].forEach((o,k)=>{const x=document.createElement('button');x.className='b';x.style.cssText='display:block;width:100%;margin:6px 0';x.textContent=o;x.onclick=()=>{if(k==q[2])qs++;qi++;qshow()};b.append(x)})}
+
+// ของที่ชอบ
+const FC=['อาหารที่ชอบ 🍜','ของที่ชอบ 🧸','สิ่งที่ชอบทำ 🎮','สิ่งที่ไม่ชอบ 🙅'];
+let F={m:[[],[],[],[]],y:[[],[],[],[]]},fw='m';
+function fav(){const b=$('#fv');b.innerHTML='';$('#ft0').classList.toggle('pk',fw=='m');$('#ft1').classList.toggle('pk',fw=='y');
+  FC.forEach((c,ci)=>{const d=document.createElement('div'),l=F[fw][ci],w=document.createElement('div');d.style.cssText='text-align:left;margin:12px 0';w.className='chips';
+    d.innerHTML=`<div style='font-weight:600;margin-bottom:6px'>${c}</div>`;
+    if(!l.length&&!ed)w.innerHTML=`<span style='opacity:.5'>ยังไม่มี (กดปุ่มแก้ไขด้านบนเพื่อเพิ่ม)</span>`;
+    l.forEach((t,k)=>{const s=document.createElement('span');s.className='chip';s.textContent=t+(ed?' ✕':'');if(ed)s.onclick=()=>{l.splice(k,1);set('F',F);fav()};w.append(s)});
+    d.append(w);
+    if(ed){const r=document.createElement('div'),i=document.createElement('input'),a=document.createElement('button');r.className='addr';i.placeholder='พิมพ์แล้วกดเพิ่ม';a.className='b';a.textContent='➕';
+      const add=()=>{const v=i.value.trim();if(v){l.push(v);set('F',F);fav()}};a.onclick=add;i.onkeydown=e=>{if(e.key=='Enter')add()};r.append(i,a);d.append(r)}
+    b.append(d)})}
+$('#ft0').onclick=()=>{fw='m';fav()};$('#ft1').onclick=()=>{fw='y';fav()};
+
+// เช็คลิสต์ 100 กิจกรรม
+const KD='ไปเที่ยวทะเลด้วยกัน|ขึ้นเขาดูทะเลหมอก|นั่งรถไฟไปเที่ยวต่างจังหวัด|ไปต่างประเทศด้วยกันครั้งแรก|ดูพระอาทิตย์ขึ้นด้วยกัน|ดูพระอาทิตย์ตกด้วยกัน|ตั้งแคมป์นอนเต็นท์|ไปเที่ยวสวนสนุก|ไปสวนน้ำ|ไปเที่ยวสวนสัตว์|ปั่นจักรยานเล่นรอบสวน|ไปพิพิธภัณฑ์หรือแกลเลอรี|ไปเดินตลาดนัดกลางคืน|ไปดูคอนเสิร์ตด้วยกัน|ไปงานเทศกาลดอกไม้|ถ่ายรูปคู่ในทุ่งดอกไม้|ไปดูดาวด้วยกัน|พักที่พักสวยๆ ด้วยกัน|ไปเที่ยวเกาะ|ไปไหว้พระขอพรด้วยกัน|กินบุฟเฟต์จนอิ่มเดินไม่ไหว|ทำอาหารกินด้วยกันที่บ้าน|ทำเค้กหรือขนมด้วยกัน|กินหมูกระทะ|กินชาบูหรือสุกี้|ไปคาเฟ่น่ารักๆ|กินไอศกรีมคนละรสแล้วแลกกัน|ไปปิกนิกในสวน|ลองร้านอาหารใหม่ที่ไม่เคยกิน|กินอาหารริมทางด้วยกัน|ทำเมนูโปรดให้อีกคนกิน|จัดเซอร์ไพรส์วันเกิดให้กัน|ทำชานมไข่มุกกินเอง|กินข้าวมื้อดึกด้วยกัน|ไปตลาดซื้อของมาทำกับข้าว|ดูหนังที่บ้านพร้อมป๊อปคอร์น|ดูซีรีส์ด้วยกันจนจบเรื่อง|เล่นเกมด้วยกันทั้งวัน|เล่นบอร์ดเกม|ต่อเลโก้หรือจิ๊กซอว์ด้วยกัน|ทำความสะอาดห้องด้วยกัน|นอนกอดกันทั้งวัน|เล่านิทานก่อนนอน|เขียนไดอารี่คู่|ถ่ายรูปในตู้สติกเกอร์|ถ่ายโพลารอยด์ทุกที่ที่ไป|ทำการ์ดให้กันและกัน|วาดรูปให้กัน|ทำงาน DIY ด้วยกัน|ปลูกต้นไม้ด้วยกัน|ไปเล่นกับน้องแมวหรือน้องหมา|เปิดเพลงแล้วเต้นกันในห้อง|ร้องคาราโอเกะด้วยกัน|ทำเพลย์ลิสต์ของเราสองคน|ทำคลิปวิดีโอสั้นๆ ด้วยกัน|ไปเล่นโบว์ลิ่ง|ไปเล่นสเก็ต|เล่นแบดมินตันด้วยกัน|ไปว่ายน้ำด้วยกัน|ไปห้อง Escape Room|ไปเล่นตู้เกมอาร์เคด|ไปเล่นเลเซอร์แท็ก|ลองทำสิ่งที่กลัวด้วยกัน|วิ่งเช้าด้วยกัน|ไปเดินป่าหรือน้ำตก|เรียนทำอะไรใหม่ๆ ด้วยกัน|ไปเรียนเต้นหรือทำอาหาร|เล่นเกมใครแพ้ต้องเลี้ยง|ลองโยคะคู่|ขับรถเล่นไปเรื่อยๆ ไม่มีจุดหมาย|เขียนจดหมายถึงกัน|เขียนจดหมายถึงตัวเองในอีก 5 ปี|บอกรักกันทุกวัน 1 สัปดาห์|ทำเซอร์ไพรส์โดยไม่ให้รู้ตัว|ให้ดอกไม้กันโดยไม่มีเหตุผล|เต้นรำกันใต้แสงจันทร์|ดินเนอร์ใต้แสงเทียน|แต่งตัวชุดคู่|ใส่แหวนหรือสร้อยคู่|ทำแคปซูลเวลาไว้เปิดอีกหลายปี|เขียนลิสต์ความฝันของเราสองคน|บอกสิ่งที่ชอบในตัวกันและกัน|แนะนำให้รู้จักครอบครัวและเพื่อน|ไปเที่ยวบ้านเกิดของกันและกัน|ไปงานแต่งงานเพื่อนด้วยกัน|ขอบคุณกันก่อนนอนทุกคืน|โทรคุยกันจนหลับ|ส่งข้อความทักก่อนใครตื่นเช้า|ดูหนังเรื่องโปรดของอีกฝ่าย|ช่วยกันเลือกของขวัญให้คนในครอบครัว|ออมเงินด้วยกันเพื่อเป้าหมายแรก|วางแผนเที่ยวครั้งถัดไป|เลี้ยงสัตว์เลี้ยงตัวแรกด้วยกัน|ฉลองครบรอบ 3 ปี|ฉลองครบรอบ 5 ปี|ไปอยู่บ้านเดียวกัน|ปริ้นรูปคู่ทำเป็นอัลบั้มจริง|ถ่ายรูปคู่ที่เดิมทุกปี|ซื้อบ้านเล็กๆ ด้วยกัน|แก่ไปด้วยกัน 💕'.split('|').map(t=>({t,d:0}));
+let K=KD,kf=0;
+function kc(){const d=K.filter(x=>x.d).length;$('#kn').textContent=d+' / '+K.length;$('#kb').style.width=(K.length?d/K.length*100:0)+'%'}
+function kl(){const b=$('#kl');b.innerHTML='';document.querySelectorAll('.kf').forEach(x=>x.classList.toggle('pk',+x.dataset.f==kf));
+  K.forEach((o,i)=>{if(kf==1&&!o.d||kf==2&&o.d)return;
+    const r=document.createElement('div'),n=document.createElement('b'),c=document.createElement('button'),t=document.createElement('span');
+    r.className='kr'+(o.d?' dn':'');n.textContent=i+1;c.className='kc';c.textContent=o.d?'✅':'⬜';
+    c.onclick=()=>{o.d=o.d?0:1;set('K',K);r.classList.toggle('dn',!!o.d);c.textContent=o.d?'✅':'⬜';kc();
+      if(K.length&&K.every(x=>x.d))toast('🎉 ทำครบทุกข้อแล้ว! เก่งที่สุดเลย');else if(kf)kl()};
+    t.className='kt';t.textContent=o.t;t.contentEditable=ed;t.oninput=()=>{o.t=t.textContent;set('K',K)};
+    r.append(n,c,t);
+    if(ed){const x=document.createElement('button');x.className='kx';x.textContent='✕';x.onclick=()=>{K.splice(i,1);set('K',K);kl()};r.append(x)}
+    b.append(r)});kc()}
+const ka=()=>{const v=$('#ki').value.trim();if(v){K.push({t:v,d:0});set('K',K);$('#ki').value='';kl();$('#kl').scrollTop=1e6}};
+$('#kad').onclick=ka;$('#ki').onkeydown=e=>{if(e.key=='Enter')ka()};
+document.querySelectorAll('.kf').forEach(b=>b.onclick=()=>{kf=+b.dataset.f;kl()});
+
+// บอร์ด / โน๊ต / ภารกิจความหวาน
+const SPD='กอดกัน 20 วินาที|ชมอีกฝ่าย 3 ข้อ|ส่งข้อความบอกคิดถึงตอนเช้า|โทรคุยกัน 10 นาทีโดยไม่เล่นอย่างอื่น|เขียนโน๊ตน่ารักๆ แอบซ่อนไว้ให้|ซื้อขนมที่อีกฝ่ายชอบมาฝาก|นวดไหล่ให้อีกฝ่าย 5 นาที|จับมือกันเดินเล่น|ขอบคุณอีกฝ่ายในเรื่องที่ไม่เคยพูด|ส่งเพลงที่ฟังแล้วนึกถึงเธอ|ถ่ายรูปคู่ของวันนี้|ทำเครื่องดื่มให้อีกฝ่าย|ถามว่าวันนี้เป็นยังไงแล้วตั้งใจฟัง|วาดรูปเล็กๆ ให้อีกฝ่าย|วางแผนเดทครั้งต่อไปด้วยกัน|หอมแก้มหรือหอมหน้าผาก|ดูรูปเก่าของเราด้วยกัน 10 นาที|ทำมื้อเล็กๆ ให้อีกฝ่ายกิน|ส่งสติกเกอร์น่ารักๆ ให้|เล่าความฝันที่อยากทำด้วยกัน|บอกสิ่งที่ชอบในตัวอีกฝ่ายที่ไม่เคยบอก|เปิดเพลงโปรดแล้วเต้นด้วยกัน|ส่งข้อความราตรีสวัสดิ์หวานๆ|พูดคำว่ารักพร้อมมองตา|ซื้อดอกไม้ช่อเล็กให้|เล่นเกมสั้นๆ ด้วยกัน|ชวนกันเดินเล่นหลังมื้อเย็น|นอนกอดกันก่อนหลับ'.split('|');
+let B=['🐲 คำพูดติดปากของมังกร','🍓 คำพูดติดปากของแยม','💬 คำพูดของแยมที่มังกรชอบ','💬 คำพูดของมังกรที่แยมชอบ'].map(n=>({n,i:[]})),bi=0,NT={},SW={p:0,d:'',a:[]},SP=SPD;
+const dk=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const cf=(b,t,fn)=>{let w;b.onclick=()=>{if(!w){w=setTimeout(()=>{w=0;b.textContent=t},3000);b.textContent='⚠️ กดอีกครั้งเพื่อยืนยัน';return}clearTimeout(w);w=0;b.textContent=t;fn()}};
+function chips(el,arr,key,ph){el.innerHTML='';const w=document.createElement('div');w.className='chips';
+  arr.forEach((t,k)=>{const s=document.createElement('span');s.className='chip';s.textContent=t+(ed?' ✕':'');if(ed)s.onclick=()=>{arr.splice(k,1);set(key,arr);chips(el,arr,key,ph)};w.append(s)});el.append(w);
+  if(ed){const r=document.createElement('div'),i=document.createElement('input'),a=document.createElement('button');r.className='addr';i.placeholder=ph;a.className='b';a.textContent='➕';
+    const add=()=>{const v=i.value.trim();if(v){arr.push(v);set(key,arr);chips(el,arr,key,ph)}};a.onclick=add;i.onkeydown=e=>{if(e.key=='Enter')add()};r.append(i,a);el.append(r)}}
+function ex(){cdn();lt();dcv();sts();pcl();whd();rows($('#whe'),WH,'WH','เพิ่มตัวเลือกใหม่...');rows($('#wyl'),W,'WY','เพิ่มเหตุผลใหม่...');pll();hkl();qshow();evl();cal();bd();swt();nts();dlib();vcl();rows($('#xfl'),FD,'FD','เพิ่มอาหารใหม่...');chips($('#xsp'),SP,'SP','เพิ่มภารกิจความหวานใหม่...')}
+function bd(){const el=$('#xbt');el.innerHTML='';
+  B.forEach((b,k)=>{const x=document.createElement('button');x.className='b'+(k==bi?' pk':'');x.textContent=b.n;x.onclick=()=>{bi=k;bd()};el.append(x)});
+  if(ed){const x=document.createElement('button');x.className='b';x.textContent='➕ บอร์ดใหม่';x.onclick=()=>{B.push({n:'📌 บอร์ดใหม่',i:[]});bi=B.length-1;set('B',B);bd()};el.append(x)}
+  const b=B[bi],n=$('#xbn'),l=$('#xbl');n.textContent=b.n;n.contentEditable=ed;n.oninput=()=>{b.n=n.textContent;set('B',B)};l.innerHTML='';
+  if(!b.i.length)l.innerHTML=`<div style='opacity:.5;padding:8px'>ยังไม่มีรายการ (กด ✏️ แก้ไข ด้านบนเพื่อเพิ่ม)</div>`;
+  b.i.map((o,k)=>[o,k]).sort((p,q)=>q[0].c-p[0].c).forEach(([o,k],r)=>{const w=document.createElement('div'),a=document.createElement('b'),t=document.createElement('span'),c=document.createElement('em'),p=document.createElement('button');
+    w.className='rk';a.textContent=['🥇','🥈','🥉'][r]||r+1;t.className='kt';t.textContent=o.t;t.contentEditable=ed;t.oninput=()=>{o.t=t.textContent;set('B',B)};
+    c.textContent='×'+o.c;p.className='b pk';p.textContent='+1';p.style.padding='2px 10px';p.onclick=()=>{o.c++;set('B',B);bd()};w.append(a,t,c,p);
+    if(ed){const x=document.createElement('button');x.className='kx';x.textContent='✕';x.onclick=()=>{b.i.splice(k,1);set('B',B);bd()};w.append(x)}
+    l.append(w)})}
+const ba=()=>{const v=$('#xbi').value.trim();if(v){B[bi].i.push({t:v,c:0});set('B',B);$('#xbi').value='';bd()}};
+$('#xba').onclick=ba;$('#xbi').onkeydown=e=>{if(e.key=='Enter')ba()};
+cf($('#xbd'),'🗑️ ลบบอร์ดนี้',()=>{if(B.length<2)return toast('ต้องมีอย่างน้อย 1 บอร์ดนะ');B.splice(bi,1);bi=0;set('B',B);bd()});
+function nts(){$('#xnt').value=NT[dk()]||'';$('#xnd').textContent='📅 '+dk();const h=$('#xnh');h.innerHTML='';
+  const q=($('#xns').value||'').trim().toLowerCase(),f=$('#xnf').value,fl=!!(q||f),all=Object.keys(NT).filter(k=>k!=dk()&&NT[k]);
+  const ks=all.filter(k=>(!f||k==f)&&(!q||NT[k].toLowerCase().includes(q)||k.includes(q))).sort().reverse();
+  $('#xnc').textContent=fl?`พบ ${ks.length} โน๊ต จากทั้งหมด ${all.length}`:(all.length>15?`แสดง 15 วันล่าสุด · ค้นหาหรือเลือกวันที่เพื่อดูโน๊ตที่เก่ากว่านี้ (มีทั้งหมด ${all.length} โน๊ต)`:'');
+  (fl?ks:ks.slice(0,15)).forEach(k=>{const e=document.createElement('div'),s=document.createElement('span');e.className='hn';e.innerHTML=`<b>${k}</b>`;s.textContent=NT[k];e.append(s);
+    if(ed){const x=document.createElement('button');x.className='kx';x.textContent='✕';x.onclick=()=>{delete NT[k];set('NT',NT);nts()};e.append(x)}h.append(e)})}
+$('#xnt').oninput=()=>{const v=$('#xnt').value;if(v.trim())NT[dk()]=v;else delete NT[dk()];set('NT',NT)};
+$('#xns').oninput=nts;$('#xnf').onchange=nts;$('#xnx').onclick=()=>{$('#xns').value='';$('#xnf').value='';nts()};
+function swt(){const t=dk();
+  if(SW.d!=t){SW.d=t;SW.a=[...SP].sort(()=>Math.random()-.5).slice(0,2).map(x=>({t:x,x:0}));set('SW',SW)}
+  const p=SW.p,lv=Math.floor(p/100),N6=['🌱 หวานนิดๆ','🍭 หวานกำลังดี','🍰 หวานละมุน','🍫 หวานซึ้งใจ','🍯 หวานจนมดขึ้น','💖 หวานที่สุดในโลก'];
+  $('#xsw').textContent=p+' 🍬';$('#xlv').textContent='Lv.'+(lv+1)+' '+N6[Math.min(lv,5)];$('#xsb').style.width=(p%100)+'%';
+  const d=$('#xsd');d.innerHTML='';
+  SW.a.forEach(o=>{const r=document.createElement('div'),c=document.createElement('button'),s=document.createElement('span'),e=document.createElement('em');
+    r.className='kr'+(o.x?' dn':'');c.className='kc';c.textContent=o.x?'✅':'⬜';s.className='ks';s.textContent=o.t;e.textContent='+10🍬';e.style.cssText='font-style:normal;font-size:12px;flex:none';
+    c.onclick=()=>{o.x=o.x?0:1;SW.p=Math.max(0,SW.p+(o.x?10:-10));set('SW',SW);SD[dk()]=SW.a.filter(a=>a.x).length;set('SD',SD);swt();cal();if(o.x&&SW.a.every(a=>a.x))toast('🍬 ทำภารกิจครบแล้ว! พรุ่งนี้มาลุ้นภารกิจใหม่ 💕')};
+    r.append(c,s,e);d.append(r)})}
+
+// ลูกเล่นน่ารัก
+let LC=0,cfd=0,au,mi;
+function conf(){for(let k=0;k<30;k++)setTimeout(()=>{const h=document.createElement('span');h.className='pop';h.textContent=['💗','✨','🎉','🌸','🍓','🐲'][k%6];h.style.left=Math.random()*100+'vw';h.style.top=(30+Math.random()*50)+'vh';document.body.append(h);setTimeout(()=>h.remove(),900)},k*60)}
+function cdn(){const n=new Date(),t0=new Date(n.getFullYear(),n.getMonth(),n.getDate()),d=Math.round((t0-new Date(2024,9,17))/864e5);
+  let y=n.getFullYear(),a=new Date(y,9,17);if(a<t0){y++;a=new Date(y,9,17)}
+  const lf=Math.round((a-t0)/864e5),yr=y-2024,m=[100,200,300,365,500,730,1000,1500,2000,3000,3650].find(x=>x>=d),o=[];
+  o.push(lf?`⏳ อีก <b>${lf}</b> วัน จะครบรอบ ${yr} ปี`:`🎉 วันนี้ครบรอบ ${yr} ปี สุขสันต์วันครบรอบ! 🎉`);
+  if(m)o.push(m==d?`🏅 วันนี้ครบ ${m} วันพอดี!`:`🏅 ไมล์สโตนถัดไป: ครบ ${m} วัน (อีก ${m-d} วัน)`);
+  $('#xcd').innerHTML=o.join('<br>');$('#xlc').textContent=LC;
+  if(!lf&&!cfd){cfd=1;conf()}}
+const jp=e=>{e.classList.remove('jp');void e.offsetWidth;e.classList.add('jp')};
+const MS={xm1:['🐲 แยมน่ารักที่สุดในโลกเลย','🐲 มังกรจะอยู่ข้างแยมเสมอนะ','🐲 วันนี้แยมยิ้มแล้วหรือยังน้า 😚','🐲 ขอกอดทีนะ 🫂'],xm2:['🍓 มังกรเก่งที่สุดเลย','🍓 แยมรักมังกรเท่าทั้งจักรวาลเลย 💕','🍓 ขอบคุณที่อยู่ข้างกันนะ 🥹','🍓 วันนี้กินข้าวหรือยังน้า 🍚']};
+['xm1','xm2'].forEach(id=>{const e=$('#'+id);e.onclick=()=>{jp(e);const a=MS[id];$('#xbub').textContent=a[Math.random()*a.length|0]}});
+$('#xhr').onclick=()=>{jp($('#xhr'));$('#xlc').textContent=++LC;set('LC',LC);if(LC%50==0){conf();toast('💗 ส่งรักครบ '+LC+' ครั้งแล้ว!')}};
+(()=>{const f=$('#fx');['🌸','💗','✨','🍓','🌷','💮'].forEach(e=>{for(let k=0;k<2;k++){const s=document.createElement('span');s.textContent=e;
+  s.style.cssText=`left:${Math.random()*96}%;font-size:${14+Math.random()*14}px;opacity:.55;animation-duration:${9+Math.random()*9}s;animation-delay:-${Math.random()*14}s`;f.append(s)}})})();
+$('#bF').onclick=()=>{const f=$('#fx');f.hidden=!f.hidden;set('fx',f.hidden?1:0)};
+$('#bM').onclick=()=>{if(mi){clearInterval(mi);mi=0;$('#bM').textContent='🎵';return}
+  au=au||new(window.AudioContext||window.webkitAudioContext)();au.resume();const sc5={halloween:[220,246.94,261.63,329.63,349.23,440],christmas:[523.25,659.25,783.99,1046.5,1318.5,1567.98]}[CT]||[523.25,587.33,659.25,783.99,880,1046.5];
+  mi=setInterval(()=>{const o=au.createOscillator(),g=au.createGain(),t=au.currentTime;o.type='sine';o.frequency.value=sc5[Math.random()*6|0]*(Math.random()<.2?.5:1);
+    g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.08,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+1.4);o.connect(g).connect(au.destination);o.start();o.stop(t+1.5)},520);$('#bM').textContent='🔇'};
+
+// สุ่มอาหาร / สุ่มการ์ด
+const FDD='ข้าวมันไก่|ส้มตำ|หมูกระทะ|ชาบู|ผัดกะเพรา|ข้าวผัด|ก๋วยเตี๋ยว|ราเมน|ซูชิ|พิซซ่า|เบอร์เกอร์|สเต็ก|ไก่ทอด|สุกี้|บุฟเฟต์|ข้าวต้ม|ผัดไทย|แกงเขียวหวาน|อาหารเกาหลี|ไอศกรีม'.split('|');
+const DT='กอดแน่นๆ 30 วินาที|นวดไหล่ให้อีกฝ่าย 5 นาที|ชมอีกฝ่าย 5 ข้อ|ทำเครื่องดื่มให้ 1 แก้ว|เขียนโน๊ตรักแล้วแอบซ่อนไว้|ล้างจานหรือเก็บของให้แทน 1 วัน|เล่านิทานก่อนนอนให้ฟัง|ป้อนข้าวให้อีกฝ่าย 1 มื้อ|ถ่ายรูปให้อีกฝ่าย 10 รูปแบบช่างภาพส่วนตัว|ฟังอีกฝ่ายระบายโดยไม่ขัด 10 นาที|ไปส่งอีกฝ่ายถึงหน้าบ้าน|หอมแก้ม 3 ที|เป็นคนเลือกเดทและร้านอาหารให้ทั้งหมด|คูปองขออะไรก็ได้ 1 ข้อ|คูปองเลี้ยงขนมหรือชานม 1 แก้ว|คูปองกอดนานเท่าที่ต้องการ|คูปองงดงอนได้ 1 ครั้ง|คูปองเลือกหนังที่จะดูคืนนี้|คูปองให้อีกฝ่ายทำอาหารให้ 1 มื้อ|คูปองคุมรีโมทและเพลย์ลิสต์ทั้งวัน|คูปองนอนตื่นสายโดยไม่โดนกวน|คูปองให้อีกฝ่ายนวดเท้า 10 นาที|คูปองซื้อของชิ้นเล็กๆ ที่อยากได้|คูปองวันนี้ใครแพ้ต้องยอม|คูปองเดทสุดพิเศษ 1 ครั้ง|คูปองพิเศษ ขออะไรก็ได้ 3 ข้อ|ไปเดินเล่นด้วยกัน 30 นาที|ดูหนังหรือซีรีส์ด้วยกัน 1 เรื่อง|เล่นเกมด้วยกัน 1 ชั่วโมง|ทำอาหารด้วยกัน|ถ่ายรูปคู่ 5 ท่า|เปิดเพลงแล้วเต้นด้วยกัน|ไปคาเฟ่ใหม่ที่ไม่เคยไป|วาดรูปหน้ากันและกัน|เล่นเกมถามตอบ ถามกันคนละ 5 ข้อ|ออกไปดูพระอาทิตย์ตกด้วยกัน|วางแผนทริปในฝันด้วยกัน|ดูรูปเก่าของเราแล้วเล่าความทรงจำ|ไปเดทกลางคืนนอกบ้าน|เธอเป็นกาแฟหรือเปล่า ทำไมคิดถึงทุกเช้าเลย ☕|เธอมีแผนที่ไหม ฉันหลงในตัวเธอแล้ว 🗺️|เธอเป็นไวไฟหรือเปล่า ฉันรู้สึกถึงความเชื่อมต่อ 📶|เธอชื่อกูเกิลใช่ไหม เพราะเธอมีทุกอย่างที่ฉันตามหา 🔍|หัวใจฉันแบตหมด ขอชาร์จด้วยรอยยิ้มเธอหน่อย 🔋|เธอเป็นน้ำตาลหรือเปล่า ทำไมอยู่ใกล้แล้วหวานจัง 🍬|ถ้าเธอเป็นเพลง ฉันขอกดเล่นซ้ำทั้งวัน 🎵|ฉันไม่ใช่นักบิน แต่ลงจอดที่ใจเธอได้ทุกครั้ง ✈️|ขอยืมเวลาหน่อยได้ไหม ฉันอยากใช้ทั้งชีวิตกับเธอ ⏳|เธอเป็นตัวหนังสือหรือเปล่า เพราะฉันอ่านเธอไม่เบื่อเลย 📖|เธอเป็นเจ้าของหัวใจฉันแล้ว ต้องจ่ายค่าเช่าเป็นกอดนะ 🏠|ฉันมีดีแค่ชอบเธอ ส่วนเรื่องอื่นเดี๋ยวพัฒนา 😅|โลกนี้มีคนเป็นล้าน แต่ที่หยุดเวลาของฉันได้มีแค่เธอ 💘'.split('|');
+const RK=['A','2','3','4','5','6','7','8','9','10','J','Q','K'],SUT=['♥','♦','♠','♣'],SU={'♥':'ต้องทำให้กัน','♦':'รางวัล','♠':'กิจกรรม','♣':'มุกจีบ','★':'อื่นๆ'};
+const DD=DT.map((t,i)=>({s:SUT[i/13|0],r:RK[i%13],t})),isR=s=>s=='♥'||s=='♦';
+let D=DD.map(x=>({...x})),FD=[...FDD],ND=1,fi;
+function rows(el,arr,key,ph){el.innerHTML='';
+  arr.forEach((t,k)=>{const r=document.createElement('div'),s=document.createElement('span');r.className='kr';s.className='kt';s.textContent=t;s.contentEditable=ed;s.oninput=()=>{arr[k]=s.textContent;set(key,arr)};r.append(s);
+    if(ed){const x=document.createElement('button');x.className='kx';x.textContent='✕';x.onclick=()=>{arr.splice(k,1);set(key,arr);rows(el,arr,key,ph)};r.append(x)}el.append(r)});
+  if(ed){const r=document.createElement('div'),i=document.createElement('input'),a=document.createElement('button');r.className='addr';i.placeholder=ph;a.className='b';a.textContent='➕';
+    const add=()=>{const v=i.value.trim();if(v){arr.push(v);set(key,arr);rows(el,arr,key,ph);el.scrollTop=1e6}};a.onclick=add;i.onkeydown=e=>{if(e.key=='Enter')add()};r.append(i,a);el.append(r)}}
+$('#xfg').onclick=()=>{if(!FD.length)return toast('ยังไม่มีรายการอาหาร (กด ✏️ แก้ไข เพื่อเพิ่ม)');clearInterval(fi);let n=0;const r=$('#xfr');
+  fi=setInterval(()=>{r.textContent=FD[Math.random()*FD.length|0];if(++n>14){clearInterval(fi);r.textContent='🍽️ '+r.textContent;jp(r);conf()}},80)};
+function dlib(){const el=$('#xkl');el.innerHTML='';$('#xkc').textContent=D.length;if(DL!=D.length)deck();
+  D.forEach((c,k)=>{const r=document.createElement('div'),b=document.createElement('b'),t=document.createElement('span'),x=document.createElement('button');
+    r.className='kr';b.textContent=c.r+c.s;b.style.cssText='width:48px;opacity:1;text-align:left;color:'+(isR(c.s)?'#e0455f':'inherit');
+    t.className='kt';t.textContent=c.t;t.contentEditable=ed;t.oninput=()=>{c.t=t.textContent;set('D',D)};
+    x.className='kx';x.textContent='✕';x.onclick=()=>{D.splice(k,1);set('D',D);dlib()};r.append(b,t);if(ed)r.append(x);el.append(r)})}
+const kadd=()=>{const v=$('#xki').value.trim();if(!v)return;const s=$('#xks').value;D.push({s,r:String(D.filter(c=>c.s==s).length+1),t:v});set('D',D);$('#xki').value='';dlib();$('#xkl').scrollTop=1e6};
+$('#xka').onclick=kadd;$('#xki').onkeydown=e=>{if(e.key=='Enter')kadd()};
+cf($('#xkd'),'↺ คืนค่าสำรับมาตรฐาน 52 ใบ',()=>{D=DD.map(x=>({...x}));set('D',D);DL=-1;dlib()});
+$('#xkm').onclick=()=>{ND=Math.max(1,ND-1);$('#xkv').textContent=ND};
+$('#xkp').onclick=()=>{ND=Math.min(Math.max(D.length,1),ND+1);$('#xkv').textContent=ND};
+$('#xkg').onclick=()=>{const r=$('#xkr');r.innerHTML='';if(!D.length)return toast('สำรับว่างเปล่า (กด ✏️ แก้ไข แล้วเพิ่มการ์ดหรือคืนค่าสำรับ)');
+  [...D].sort(()=>Math.random()-.5).slice(0,ND).forEach((c,i)=>{const e=document.createElement('div'),h=document.createElement('b'),s=document.createElement('span');
+    e.className='pc'+(isR(c.s)?' rd':'');e.style.animationDelay=i*.12+'s';h.textContent=c.r+c.s+' '+(SU[c.s]||'');s.textContent=c.t;e.append(h,s);r.append(e)})};
+
+// ไพ่จริง คว่ำทั้งสำรับ แตะเพื่อเฉลย
+const PP={A:[[1,3]],2:[[1,0],[1,6]],3:[[1,0],[1,3],[1,6]],4:[[0,0],[2,0],[0,6],[2,6]],5:[[0,0],[2,0],[1,3],[0,6],[2,6]],6:[[0,0],[2,0],[0,3],[2,3],[0,6],[2,6]]};
+PP[7]=[...PP[6],[1,1.5]];PP[8]=[...PP[7],[1,4.5]];PP[9]=[[0,0],[2,0],[0,2],[2,2],[0,4],[2,4],[0,6],[2,6],[1,3]];PP[10]=[...PP[9].slice(0,8),[1,1],[1,5]];
+const SC=s=>s=='♥'||s=='♦'?'#e0455f':s=='★'?'#f5a623':'#2b2024';
+let SO=[],OP=new Set(),DL=-1;
+function face(c){const e=document.createElement('div'),p=PP[c.r];let m='';
+  if(p)p.forEach(([x,y])=>{m+=`<b class='pip${c.r=='A'?' big':''}${y>3?' dn':''}' style='left:${x*50}%;top:${y/6*100}%'>${c.s}</b>`});
+  else m=`<b class='pip big'>${'JQK'.includes(c.r)?{J:'⚔️',Q:'🌹',K:'👑'}[c.r]:c.s}</b>`;
+  e.className='pkc';e.style.color=SC(c.s);
+  e.innerHTML=`<i class='cn'>${c.r}<br>${c.s}</i><i class='cn br'>${c.r}<br>${c.s}</i><div class='pp'>${m}</div>`;return e}
+function deck(){SO=D.map((_,i)=>i).sort(()=>Math.random()-.5);OP=new Set();DL=D.length;const g=$('#xdk');g.innerHTML='';$('#xkr').innerHTML='';
+  SO.forEach((idx,si)=>{const s=document.createElement('div'),f=document.createElement('div'),bk=document.createElement('div'),fr=face(D[idx]);
+    s.className='sl';f.className='f3';bk.className='bk';bk.textContent='♥';fr.classList.add('fr');f.append(bk,fr);s.append(f);s.onclick=()=>opn(si);g.append(s)});
+  $('#xrm').textContent=D.length}
+function opn(si){const idx=SO[si],c=D[idx];if(!c||OP.has(idx))return;OP.add(idx);$('#xdk').children[si].classList.add('on');
+  setTimeout(()=>{const w=document.createElement('div'),b=document.createElement('b'),s=document.createElement('span');w.className='rv';b.textContent=SU[c.s]||'';s.textContent=c.t;
+    w.append(face(c),b,s);$('#xkr').prepend(w);$('#xrm').textContent=D.length-OP.size},350)}
+$('#xsh').onclick=deck;
+$('#xkg').onclick=()=>{const left=SO.map((_,i)=>i).filter(i=>!OP.has(SO[i]));if(!left.length)return toast('เปิดไพ่หมดแล้ว กด 🔀 สับ/คว่ำใหม่นะ');
+  left.sort(()=>Math.random()-.5).slice(0,ND).forEach((si,k)=>setTimeout(()=>opn(si),k*450))};
+
+// ธีมเทศกาล / วิดีโอ / ไดอารี่เสียง
+let V=[],VC=[],VW='🐲',TM='auto',VU=0,UR=[],mr,ch=[],rt,rs;
+const TH={
+classic:{n:'🌸 คลาสสิค',e:'💌',f:['🌸','💗','✨','🍓','🌷','💮']},
+anniv:{n:'💞 วันครบรอบ',e:'💞',f:['💗','💞','✨','🐲','🍓','🎉'],v:{'--bg':'#fff3f8','--card':'#fffdfa','--ink':'#5a4048','--pink':'#ffc2de','--pink2':'#ff4f9a','--mint':'#c4ebdc','--line':'#5a4048','--acc':'#ba3a70'},a:k=>k>=1016&&k<=1018},
+valentine:{n:'💘 วาเลนไทน์',e:'💘',f:['💘','💗','🌹','💌'],v:{'--bg':'#fff0f3','--card':'#fffafb','--ink':'#5a4048','--pink':'#ffb3c6','--pink2':'#e63962','--mint':'#ffd6e0','--line':'#5a4048','--acc':'#ba2e4f'},a:k=>k>=210&&k<=216},
+songkran:{n:'💦 สงกรานต์',e:'💦',f:['💦','💧','🐘','🌼'],v:{'--bg':'#eefaff','--card':'#fbfeff','--ink':'#2f4858','--pink':'#a9e0ff','--pink2':'#1c9bdc','--mint':'#c9f1ff','--line':'#2f4858','--acc':'#1471a0'},a:k=>k>=413&&k<=415},
+halloween:{n:'🎃 ฮัลโลวีน',e:'🎃',f:['🎃','👻','🦇','🍬'],v:{'--bg':'#fff1e3','--card':'#fffaf4','--ink':'#4a2f5a','--pink':'#ffbd7a','--pink2':'#8a4fd6','--mint':'#dccbf7','--line':'#4a2f5a','--acc':'#8a4fd6'},a:k=>k>=1025&&k<=1031},
+loy:{n:'🪔 ลอยกระทง',e:'🪔',f:['🪔','🌕','🌼','🛶'],v:{'--bg':'#fff6e6','--card':'#fffcf5','--ink':'#5a3a1f','--pink':'#ffd28a','--pink2':'#f08a1c','--mint':'#ffe9bd','--line':'#5a3a1f','--acc':'#9e5b12'},a:k=>k>=1110&&k<=1128},
+christmas:{n:'🎄 คริสต์มาส',e:'🎄',f:['🎄','⭐','❄️','🎁'],v:{'--bg':'#f3fff5','--card':'#fbfffb','--ink':'#3f2a2a','--pink':'#ffb3ba','--pink2':'#d62839','--mint':'#bfe8c8','--line':'#3f2a2a','--acc':'#d62839'},a:k=>k>=1215&&k<=1226},
+newyear:{n:'🎆 ปีใหม่',e:'🎆',f:['🎆','🎉','✨','🥂'],v:{'--bg':'#fffbea','--card':'#fffef7','--ink':'#4a4032','--pink':'#ffe08a','--pink2':'#e0a000','--mint':'#cfe6ff','--line':'#4a4032','--acc':'#946900'},a:k=>k>=1227||k<=103},
+lavender:{n:'💜 ลาเวนเดอร์',e:'💜',f:['💜','🦋','✨','🌸'],v:{'--bg':'#f6f1ff','--card':'#fdfbff','--ink':'#43395e','--pink':'#d9ccff','--pink2':'#8f6bf0','--mint':'#d6ecff','--line':'#43395e','--acc':'#7456c2'}},
+mint:{n:'🌿 มิ้นต์',e:'🌿',f:['🌿','🍃','💚','🫧'],v:{'--bg':'#effcf6','--card':'#fbfffd','--ink':'#2f4a40','--pink':'#bfeedd','--pink2':'#2fb88a','--mint':'#d8f7ee','--line':'#2f4a40','--acc':'#1f795b'}},
+sunny:{n:'🌼 เหลืองพาสเทล',e:'🌼',f:['🌼','☀️','🐝','🍋'],v:{'--bg':'#fffbe8','--card':'#fffef6','--ink':'#5a4a20','--pink':'#ffe9a3','--pink2':'#f5a623','--mint':'#ffe3b8','--line':'#5a4a20','--acc':'#906215'}},
+night:{n:'🌙 กลางคืน',e:'🌙',f:['🌙','⭐','✨','💫'],v:{'--bg':'#231b33','--card':'#2f2545','--ink':'#f1e8ff','--pink':'#6b4fb3','--pink2':'#c8a5ff','--mint':'#3b5f8a','--line':'#f1e8ff','--acc':'#c8a5ff'}}};
+let CT='';const DC={anniv:'💞🐲💞🍓💞🎉💞',valentine:'🌹💘🌹💘🌹💘🌹',songkran:'💦🐘💦🌼💦🐘💦',halloween:'🎃🦇👻🎃🦇👻🎃',loy:'🪔🌕🪔🛶🪔🌕🪔',christmas:'🎄🎁⭐🎅⭐🎁🎄',newyear:'🎆🥂🎉🥂🎆'};const autoTh=()=>{const d=new Date(),k=(d.getMonth()+1)*100+d.getDate();return Object.keys(TH).find(i=>TH[i].a&&TH[i].a(k))||'classic'};
+function mkfx(l){const f=$('#fx');f.innerHTML='';l.forEach(e=>{for(let k=0;k<2;k++){const s=document.createElement('span');s.textContent=e;s.style.cssText=`left:${Math.random()*96}%;font-size:${14+Math.random()*14}px;opacity:.55;animation-duration:${9+Math.random()*9}s;animation-delay:-${Math.random()*14}s`;f.append(s)}})}
+function applyTh(){const id=TM=='auto'?autoTh():TM,t=TH[id]||TH.classic,r=document.documentElement.style;
+  ['--bg','--card','--ink','--line','--pink','--pink2','--mint','--acc'].forEach(k=>r.removeProperty(k));
+  Object.entries(t.v||{}).forEach(([k,v])=>r.setProperty(k,v));mkfx(t.f);
+  $('#thn').textContent=id=='classic'?'':(TM=='auto'?'✨ ธีมเทศกาล: ':'ธีม: ')+t.n;
+  const i=document.querySelector('.in');if(i)i.textContent=t.e;CT=id;$('#dec').textContent=DC[id]||'';thl()}
+function thl(){const p=$('#thp');p.innerHTML='';
+  const mk=(id,l)=>{const b=document.createElement('button');b.className='b'+(TM==id?' pk':'');b.textContent=l;b.onclick=()=>{TM=id;set('TM',id);applyTh()};p.append(b)};
+  mk('auto','🔄 อัตโนมัติตามเทศกาล ('+TH[autoTh()].n+')');Object.entries(TH).forEach(([id,t])=>mk(id,t.n))}
+$('#thb').onclick=()=>{$('#thp').hidden=!$('#thp').hidden};
+setInterval(applyTh,36e5);
+function vid(i){const ph=$('#ph');let v=ph.querySelector('video');if(VU){URL.revokeObjectURL(VU);VU=0}
+  if(!V[i]){if(v)v.remove();return}
+  if(!v){v=document.createElement('video');v.controls=true;v.playsInline=true;v.style.cssText='width:100%;height:100%;object-fit:contain;border-radius:10px;background:#000';ph.append(v)}
+  VU=URL.createObjectURL(V[i]);v.src=VU}
+function addV(b){const n=new Date(),id=Date.now().toString(36);VC.push({id,d:dk(),t:String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0'),w:VW});set('VC',VC);set('a'+id,b);vcl();toast('🎙️ บันทึกเสียงแล้ว')}
+function vcl(){const el=$('#xvl'),f=$('#xvf').value;UR.forEach(u=>URL.revokeObjectURL(u));UR=[];el.innerHTML='';
+  const ds=[...new Set(VC.map(x=>x.d))].filter(d=>!f||d==f).sort().reverse();
+  if(!ds.length){el.innerHTML=`<div style='opacity:.5;padding:8px'>${VC.length?'ไม่พบเสียงในวันที่เลือก':'ยังไม่มีเสียงที่บันทึก'}</div>`;return}
+  ds.forEach(d=>{const g=document.createElement('div');g.innerHTML=`<b style='display:block;margin:10px 0 4px;font-size:13px'>📅 ${d}</b>`;
+    VC.filter(x=>x.d==d).reverse().forEach(x=>{const r=document.createElement('div'),l=document.createElement('span'),a=document.createElement('audio');
+      r.className='kr';l.style.cssText='flex:none;font-size:13px';l.textContent=x.w+' '+x.t;a.controls=true;a.style.cssText='flex:1;min-width:0;height:36px';
+      get('a'+x.id).then(b=>{if(b){const u=URL.createObjectURL(b);UR.push(u);a.src=u}});r.append(l,a);
+      {const k=document.createElement('button');k.className='kx';k.textContent='🗑️';cf(k,'🗑️',()=>{VC=VC.filter(y=>y!=x);set('VC',VC);set('a'+x.id,null);vcl()});r.append(k)}
+      g.append(r)});el.append(g)})}
+document.querySelectorAll('.xw').forEach(b=>b.onclick=()=>{VW=b.dataset.w;document.querySelectorAll('.xw').forEach(x=>x.classList.toggle('pk',x==b))});
+$('#xvf').onchange=vcl;$('#xvx').onclick=()=>{$('#xvf').value='';vcl()};
+$('#xrf').onclick=()=>$('#xaf').click();$('#xaf').onchange=e=>{const f=e.target.files[0];if(f)addV(f);e.target.value=''};
+$('#xrc').onclick=async()=>{if(mr&&mr.state=='recording'){mr.stop();return}
+  try{const s=await navigator.mediaDevices.getUserMedia({audio:true});ch=[];mr=new MediaRecorder(s);mr.ondataavailable=e=>e.data.size&&ch.push(e.data);
+    mr.onstop=()=>{s.getTracks().forEach(x=>x.stop());clearInterval(rt);$('#xrc').textContent='⏺ อัดเสียง';$('#xrt').textContent='';addV(new Blob(ch,{type:mr.mimeType||'audio/webm'}))};
+    mr.start();rs=Date.now();$('#xrc').textContent='⏹ หยุดและบันทึก';rt=setInterval(()=>{$('#xrt').textContent='🔴 กำลังอัด '+Math.floor((Date.now()-rs)/1000)+' วิ'},500)}
+  catch(e){toast('เปิดไมค์ไม่ได้ในหน้านี้ ใช้ปุ่ม 📁 เลือกไฟล์เสียง แทนได้ (ไมค์จะใช้ได้เมื่อเปิดผ่านเว็บ https ของคุณเอง)')}};
+applyTh();
+
+
+// ไทม์ไลน์ / แคปซูลเวลา / ปฏิทิน / ถูกใจ / สไลด์
+let EV=[{d:'2024-10-17',t:'💞 วันที่เราเริ่มคบกัน'}],LK={},MD={},SD={},cm=new Date(new Date().getFullYear(),new Date().getMonth(),1),cs=dk(),ssT;
+const dd=s=>Math.round((new Date(s+'T00:00')-new Date(dk()+'T00:00'))/864e5);
+function evl(){const el=$('#evl');el.innerHTML='';if(!EV.length)el.innerHTML="<div style='opacity:.5;padding:8px'>ยังไม่มีเหตุการณ์ (กด ✏️ แก้ไข เพื่อเพิ่ม)</div>";
+  [...EV].sort((a,b)=>a.d<b.d?-1:1).forEach(o=>{const n=dd(o.d),r=document.createElement('div'),s=document.createElement('span'),h=document.createElement('small');
+    r.className='kr';s.className='ks';h.style.display='block';h.textContent='📅 '+o.d+' · '+(n>0?'อีก '+n+' วัน':n<0?'ผ่านมา '+-n+' วัน':'วันนี้! 🎉');
+    s.append(h,o.c&&n>0?'🔒 แคปซูลเวลา เปิดอ่านได้วันที่ '+o.d:o.t);r.append(s);
+    if(ed){const x=document.createElement('button');x.className='kx';x.textContent='✕';x.onclick=()=>{EV=EV.filter(y=>y!=o);set('EV',EV);evl()};r.append(x)}el.append(r)})}
+$('#eva').onclick=()=>{const d=$('#evd').value,t=$('#evt').value.trim();if(!d||!t)return toast('เลือกวันที่และพิมพ์ข้อความก่อนนะ');EV.push({d,t,c:$('#evc').checked&&dd(d)>0});set('EV',EV);$('#evt').value='';evl()};
+function cal(){const y=cm.getFullYear(),m=cm.getMonth(),g=$('#cal');g.innerHTML='';$('#cmt').textContent=cm.toLocaleDateString('th-TH',{month:'long',year:'numeric'});
+  ['อา','จ','อ','พ','พฤ','ศ','ส'].forEach(w=>{const e=document.createElement('small');e.textContent=w;e.style.textAlign='center';g.append(e)});
+  for(let i=0;i<new Date(y,m,1).getDay();i++)g.append(document.createElement('i'));
+  for(let d=1;d<=new Date(y,m+1,0).getDate();d++){const k=y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0'),b=document.createElement('button'),o=MD[k]||{};
+    b.className='cl'+(k==dk()?' t':'')+(k==cs?' s':'');b.innerHTML=d+'<br>'+(SD[k]?'🍬':'')+(o.a||'')+(o.b||'');b.onclick=()=>{cs=k;cal()};g.append(b)}
+  $('#cdt').textContent='📌 '+cs+' · 🍬 ทำภารกิจ '+(SD[cs]||0)+'/2';const el=$('#cmd');el.innerHTML='';
+  [['a','🐲 มังกร'],['b','🍓 แยม']].forEach(([w,n])=>{const r=document.createElement('div');r.className='bt';r.append(n+' รู้สึก: ');
+    ['😍','🥰','😊','😐','😴','😢','😡'].forEach(e=>{const b=document.createElement('button');b.className='b'+((MD[cs]||{})[w]==e?' pk':'');b.textContent=e;b.onclick=()=>{const o=MD[cs]=MD[cs]||{};o[w]=o[w]==e?'':e;set('MD',MD);cal()};r.append(b)});el.append(r)})}
+$('#cpv').onclick=()=>{cm=new Date(cm.getFullYear(),cm.getMonth()-1,1);cal()};$('#cnx').onclick=()=>{cm=new Date(cm.getFullYear(),cm.getMonth()+1,1);cal()};
+const lkb=()=>{$('#lk').textContent=(LK[cur]?'❤️ ':'🤍 ')+(LK[cur]||0)};
+$('#lk').onclick=()=>{LK[cur]=(LK[cur]||0)+1;set('LK',LK);lkb()};
+$('#bP').onclick=()=>{const ids=[...Array(N).keys()].filter(i=>P[i]);if(!ids.length)return toast('ยังไม่มีรูปในอัลบั้ม');let k=0;$('#ss').hidden=0;
+  const f=()=>{const i=ids[k++%ids.length];$('#ssi').src=P[i];$('#ssc').textContent=(PD[i]?'📅 '+pdf(PD[i])+'\n':'')+(C[i]||'')};f();clearInterval(ssT);ssT=setInterval(f,4000)};
+$('#ss').onclick=()=>{$('#ss').hidden=1;clearInterval(ssT)};
+
+
+// แก้ไขควิซ / เกมทายใจ / ลูกแก้ววิเศษ
+function qed(b){b.innerHTML='';const sv=()=>set('Q',Q);
+  Q.forEach((q,i)=>{const w=document.createElement('div');w.style.cssText='text-align:left;margin:10px 0;padding:8px;border:2px dashed var(--line);border-radius:12px';
+    const t=document.createElement('div');t.className='kt';t.contentEditable=true;t.style.fontWeight='600';t.textContent=q[0];t.oninput=()=>{q[0]=t.textContent;sv()};w.append(t);
+    q[1].forEach((o,k)=>{const r=document.createElement('div'),c=document.createElement('button'),n=document.createElement('span'),x=document.createElement('button');r.className='kr';
+      c.className='kc';c.textContent=q[2]==k?'✅':'⬜';c.onclick=()=>{q[2]=k;sv();qed(b)};
+      n.className='kt';n.contentEditable=true;n.textContent=o;n.oninput=()=>{q[1][k]=n.textContent;sv()};
+      x.className='kx';x.textContent='✕';x.onclick=()=>{if(q[1].length<=2)return toast('ต้องมีอย่างน้อย 2 ตัวเลือก');q[1].splice(k,1);if(k<q[2])q[2]--;else if(k==q[2])q[2]=0;sv();qed(b)};
+      r.append(c,n,x);w.append(r)});
+    const a=document.createElement('button'),d=document.createElement('button');a.className='b';a.textContent='➕ ตัวเลือก';a.onclick=()=>{q[1].push('ตัวเลือกใหม่');sv();qed(b)};
+    d.className='b';d.style.marginLeft='6px';cf(d,'🗑️ ลบข้อนี้',()=>{Q.splice(i,1);sv();qed(b)});w.append(a,d);b.append(w)});
+  const n=document.createElement('button');n.className='b pk';n.textContent='➕ เพิ่มคำถามใหม่';n.onclick=()=>{Q.push(['คำถามใหม่',['ตัวเลือก 1','ตัวเลือก 2'],0]);sv();qed(b)};
+  const h=document.createElement('div');h.style.cssText='font-size:12px;opacity:.7';h.textContent='แตะ ⬜ ข้างตัวเลือกเพื่อเลือกข้อที่ถูก · แตะข้อความเพื่อแก้';b.append(h,n)}
+const GQ=[['ตอนนี้อยากกินอะไรที่สุด?',['🍜 ก๋วยเตี๋ยว','🍕 พิซซ่า','🍰 ของหวาน','🍢 ปิ้งย่าง']],['เดทในฝันคือ?',['🎬 ดูหนัง','🏖️ ทะเล','☕ คาเฟ่','🏠 อยู่บ้าน']],['วันหยุดอยากทำอะไร?',['😴 นอนทั้งวัน','🛍️ ช้อปปิ้ง','🎮 เล่นเกม','🚗 ขับเที่ยว']],['ถ้าได้พรหนึ่งข้อ?',['💰 รวย','✈️ เที่ยวทั่วโลก','🍀 สุขภาพดี','💞 อยู่ด้วยกันตลอด']],['สัตว์เลี้ยงที่อยากเลี้ยง?',['🐱 แมว','🐶 หมา','🐰 กระต่าย','🐹 แฮมสเตอร์']]];
+let gq,gs=0,gn=0,gp;
+function gm(st,res){const b=$('#xgm');b.innerHTML='';if(!st)gq=GQ[Math.random()*GQ.length|0];
+  const h=document.createElement('div');h.style.margin='8px 0';h.textContent=st==2?res:(st?'🕵️ คนที่ 2 ทายว่าคนที่ 1 เลือกอะไร':'🙈 คนที่ 1 เลือกคำตอบลับ (อีกคนห้ามดู!)')+' — '+gq[0];b.append(h);
+  if(st==2){const r=document.createElement('button'),c=document.createElement('div');r.className='b pk';r.textContent='▶ รอบต่อไป';r.onclick=()=>gm(0);c.style.marginTop='8px';c.textContent='ทายถูก '+gs+' / '+gn+' รอบ';b.append(r,c);return}
+  gq[1].forEach(o=>{const x=document.createElement('button');x.className='b';x.style.cssText='display:block;width:100%;margin:6px 0';x.textContent=o;
+    x.onclick=()=>{if(!st){gp=o;gm(1)}else{gn++;const ok=o==gp;if(ok){gs++;conf()}gm(2,ok?'🎉 ทายถูก! ใจตรงกันเลย 💞':'😆 ผิดนะ คำตอบคือ '+gp)}};b.append(x)})}
+const OA=['ใช่เลย 💗','แน่นอน ✨','ถามใหม่อีกทีนะ 🤔','อาจจะ... 😏','ขอกอดก่อนแล้วจะบอก 🫂','ใจเธอรู้คำตอบอยู่แล้ว 💘','ยังไม่ใช่ตอนนี้ 🌙','เชื่อใจหัวใจตัวเองนะ 💞','ไม่นะ 🥺 แต่เราก็ยังรักกัน','100% 🎉'];
+$('#xor').onclick=()=>{const e=$('#xor');jp(e);$('#xoa').textContent='...';setTimeout(()=>$('#xoa').textContent=OA[Math.random()*OA.length|0],500)};
+gm(0);
+
+
+// เพลย์ลิสต์ / โหมดเฉพาะเรา
+const HKD='นวดให้กันแบบสปา 20 นาที|เต้นช้าๆ กอดกันกลางห้อง|จูบกันนานกว่า 1 นาที|กระซิบคำหวานข้างหู|ดินเนอร์แสงเทียนแล้วป้อนกันและกัน|ใส่ชุดนอนคู่ นอนกอดดูหนังรัก|นอนหนุนตักแล้วให้ลูบผมจนหลับ|เขียนโน๊ตบอกว่าปิ๊งอะไรในตัวอีกฝ่าย (แบบหวานแซ่บ)|ส่งข้อความแซวเบาๆ ตอนอีกฝ่ายอยู่ที่ทำงาน|เล่นเกมแพ้ต้องทำตามคำสั่ง 1 ข้อ (ในขอบเขตที่สบายใจทั้งคู่)|จัดห้องบรรยากาศโรแมนติก เปิดเพลงเบาๆ|นวดเท้าและทาโลชั่นให้|หอมแก้ม หอมคอ หอมหน้าผากให้ครบ|เล่นเกมถามตอบความลับ คนละ 3 ข้อ|ถ่ายรูปคู่แนวหวานแซ่บ เก็บไว้ดูกันสองคน|กอดจากข้างหลังตอนอีกฝ่ายล้างจาน|ตื่นสายแล้วนอนกอดกันทั้งเช้า|อาบน้ำอุ่นผ่อนคลายด้วยกัน แล้วเช็ดผมให้|ทำเครื่องดื่มหวานๆ แล้วจิบด้วยกันใต้แสงไฟสลัว|นอนมองดาวหรือเพดานแล้วกระซิบแผนเดทในฝัน'.split('|').map(t=>({t,d:0}));
+let HK=HKD,PL=[];
+const safeU=u=>/^https?:\/\//i.test(u)?u:'';
+function pll(){const el=$('#pll');el.innerHTML='';if(!PL.length)el.innerHTML="<div style='opacity:.5;padding:8px'>ยังไม่มีเพลง (กด ✏️ แก้ไข เพื่อเพิ่ม)</div>";
+  PL.forEach((o,i)=>{const r=document.createElement('div'),s=document.createElement('span'),t=document.createElement(o.u?'a':'span');r.className='kr';s.className='ks';t.textContent='🎵 '+o.t;t.style.fontWeight='600';
+    if(o.u){t.href=o.u;t.target='_blank';t.rel='noopener';t.style.color='var(--acc)'}s.append(o.w+' ',t);
+    if(o.m){const m=document.createElement('small');m.style.display='block';m.textContent=o.m;s.append(m)}r.append(s);
+    if(ed){const x=document.createElement('button');x.className='kx';x.textContent='🗑️';cf(x,'🗑️',()=>{PL.splice(i,1);set('PL',PL);pll()});r.append(x)}el.append(r)})}
+$('#pla').onclick=()=>{const t=$('#pln').value.trim();if(!t)return toast('พิมพ์ชื่อเพลงก่อนนะ');PL.push({t,u:safeU($('#plu').value.trim()),w:$('#plw').value,m:$('#plm').value.trim()});set('PL',PL);['#pln','#plu','#plm'].forEach(k=>$(k).value='');pll()};
+$('#plr').onclick=()=>{if(!PL.length)return toast('ยังไม่มีเพลงในเพลย์ลิสต์');const o=PL[Math.random()*PL.length|0],e=$('#plx');e.textContent='🎧 '+o.t+' '+o.w;jp(e)};
+function hkl(){const b=$('#hkl');b.innerHTML='';
+  HK.forEach((o,i)=>{const r=document.createElement('div'),c=document.createElement('button'),t=document.createElement('span');r.className='kr'+(o.d?' dn':'');c.className='kc';c.textContent=o.d?'✅':'⬜';
+    c.onclick=()=>{o.d=o.d?0:1;set('HK',HK);hkl()};t.className='kt';t.textContent=o.t;t.contentEditable=ed;t.oninput=()=>{o.t=t.textContent;set('HK',HK)};r.append(c,t);
+    if(ed){const x=document.createElement('button');x.className='kx';x.textContent='✕';x.onclick=()=>{HK.splice(i,1);set('HK',HK);hkl()};r.append(x)}b.append(r)});
+  const d=HK.filter(x=>x.d).length;$('#hkn').textContent=d+' / '+HK.length;$('#hkp').style.width=(HK.length?d/HK.length*100:0)+'%'}
+$('#hkt').onclick=()=>{$('#hkb').hidden=!$('#hkb').hidden};
+$('#hkr').onclick=()=>{const l=HK.filter(x=>!x.d);if(!l.length)return toast('ทำครบทุกข้อแล้ว! 🔥');const e=$('#hkx');e.textContent='🔥 '+l[Math.random()*l.length|0].t;jp(e)};
+$('#hka').onclick=()=>{const v=$('#hki').value.trim();if(v){HK.push({t:v,d:0});set('HK',HK);$('#hki').value='';hkl();$('#hkl').scrollTop=1e6}};
+
+
+// ของขวัญซ่อน / ล็อกจดหมาย / ท้าทายประจำวัน / วงล้อ / สถานที่ / สถิติ
+let GF={},ST={},PK=[],LU='',WH=['🍜 ราเมน','🥩 ปิ้งย่าง','🎬 ดูหนัง','🏖️ ไปทะเล','☕ คาเฟ่','🎳 โบว์ลิ่ง','🍰 ขนมหวาน','🌃 เดินเล่นกลางคืน'],wa=0;
+function gft(i){const p=$('#pg');p.querySelectorAll('.gf').forEach(e=>e.remove());const g=GF[i];if(!g||(g.f&&!ed))return;
+  const e=document.createElement('span');e.className='st gf';e.textContent=g.f?'🎁✓':'🎁';e.style.cssText='top:42%;left:'+(10+(i*37)%70)+'%;font-size:34px;opacity:'+(g.f?.4:1);
+  e.onclick=()=>{toast('🎁 '+g.t);if(!g.f){g.f=1;set('GF',GF);conf()}gft(i)};p.append(e)}
+$('#gfa').onclick=()=>{const t=prompt('ข้อความในของขวัญ (เว้นว่างเพื่อเอาออก)',(GF[cur]||{}).t||'');if(t===null)return;if(t.trim())GF[cur]={t:t.trim(),f:0};else delete GF[cur];set('GF',GF);gft(cur)};
+function lt(){const el=$('#letter'),lk=LU&&dd(LU)>0&&!ed;$('#lud').value=LU;
+  el.textContent=lk?'🔒 จดหมายฉบับนี้จะเปิดอ่านได้วันที่ '+LU+' (อีก '+dd(LU)+' วัน) 💌':(L||'ถึงคนที่รักที่สุด...\nขอบคุณที่อยู่ข้างกันมาสองปีเต็ม (กด ✏️ แก้ไข เพื่อเขียนจดหมายของคุณเอง)')}
+$('#lud').onchange=()=>{LU=$('#lud').value;set('LU',LU);lt()};
+const DQL=['ถามอีกฝ่ายว่าอยากไปเที่ยวที่ไหนด้วยกัน แล้วช่วยกันวางแผนคร่าวๆ', 'เล่าความทรงจำที่ชอบที่สุดของเราให้อีกฝ่ายฟัง 1 เรื่อง', 'บอกอีกฝ่ายว่าวันนี้อะไรทำให้ใจฟู แล้วฟังเรื่องของเขาแบบไม่เล่นมือถือ', 'ชวนกันนึกว่าถ้าว่างทั้งวันจะทำอะไรด้วยกัน แล้วลองจัดเดทจริงสักวัน', 'บอกสิ่งที่ขอบคุณอีกฝ่าย 1 อย่างที่ไม่เคยพูดมาก่อน', 'ส่งเพลงที่ฟังแล้วนึกถึงอีกฝ่ายให้ฟัง แล้วบอกว่าเพราะอะไร', 'เล่าว่าตอนเจอกันครั้งแรกรู้สึกยังไง แล้วถามว่าอีกฝ่ายรู้สึกยังไง', 'คุยกันว่าอีก 5 ปีข้างหน้าอยากให้เราเป็นยังไง คนละ 3 ข้อ', 'เลือกสิ่งที่อยากลองทำด้วยกันแต่ยังไม่เคยทำ 1 อย่าง แล้วนัดวันกัน', 'ทำเมนูง่ายๆ ให้อีกฝ่ายกิน หรือซื้อของที่เขาชอบมาฝาก', 'บอกนิสัยน่ารักของอีกฝ่าย 3 ข้อ ต่อหน้าหรือพิมพ์ส่งก็ได้', 'เปิดรูปเก่าของเราดูด้วยกัน 10 นาที แล้วเล่าว่าวันไหนประทับใจที่สุด', 'ทำสิ่งเล็กๆ ที่ทำให้อีกฝ่ายใจฟู เช่น ซ่อนโน๊ตน่ารักไว้ให้', 'ถามอีกฝ่ายว่ามีความฝันอะไร แล้วบอกว่าจะช่วยให้สำเร็จได้ยังไง', 'ช่วยกันคิดว่าถ้าเปิดร้านด้วยกันจะเป็นร้านอะไร พร้อมตั้งชื่อร้าน'];
+const dstr=o=>{const d=new Date();d.setDate(d.getDate()+o);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const stk=()=>{let o=ST[dstr(0)]?0:-1,n=0;while(ST[dstr(o)]){n++;o--}return n};
+function dcv(){$('#dcq').textContent='🎯 ภารกิจวันนี้: '+DQL[Math.floor(Date.now()/864e5)%DQL.length];$('#dcb').textContent=ST[dk()]?'✅ วันนี้ทำแล้ว (แตะเพื่อยกเลิก)':'✅ ทำภารกิจแล้ว';$('#dcs').textContent='🔥 ทำต่อเนื่องมาแล้ว '+stk()+' วัน (สตรีค)'}
+$('#dcb').onclick=()=>{ST[dk()]=ST[dk()]?0:1;set('ST',ST);dcv();sts();if(ST[dk()]&&[3,7,30,100].includes(stk()))conf()};
+function whd(){const w=$('#whl'),n=WH.length,c=['var(--pink)','var(--mint)','var(--card)'];w.innerHTML='';
+  w.style.background=n?'conic-gradient('+WH.map((_,i)=>c[i==n-1&&n%2?2:i%2]+' '+i*360/n+'deg '+(i+1)*360/n+'deg').join(',')+')':'var(--card)';
+  WH.forEach((t,i)=>{const e=document.createElement('span');e.textContent=t.split(' ')[0].slice(0,4);e.style.cssText='position:absolute;left:50%;top:50%;font-size:22px;transform:translate(-50%,-50%) rotate('+(i+.5)*360/n+'deg) translateY(-78px)';w.append(e)})}
+$('#whg').onclick=()=>{const n=WH.length;if(!n)return toast('ยังไม่มีตัวเลือก (กด ✏️ แก้ไข เพื่อเพิ่ม)');whd();const i=Math.random()*n|0;
+  wa=wa-wa%360+1800+360-(i+.5)*360/n;$('#whl').style.transform='rotate('+wa+'deg)';$('#whr').textContent='...';setTimeout(()=>{$('#whr').textContent='🎉 '+WH[i];conf()},3600)};
+const cmpI=(f,m)=>new Promise(r=>{const im=new Image();im.onload=()=>{const k=Math.min(1,m/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);r(c.toDataURL('image/jpeg',.8))};im.src=URL.createObjectURL(f)});
+let pcf=null;
+function pcl(){const el=$('#pcl');el.innerHTML='';if(!PK.length)el.innerHTML="<div style='opacity:.5;padding:8px'>ยังไม่มีสถานที่ (กด ✏️ แก้ไข เพื่อเพิ่ม)</div>";
+  PK.forEach((o,i)=>{const r=document.createElement('div'),s=document.createElement('span'),a=document.createElement('a');r.className='kr';s.className='ks';a.textContent='📍 '+o.n;a.href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(o.n);a.target='_blank';a.rel='noopener';a.style.cssText='color:var(--acc);font-weight:600';s.append(a);
+    if(o.d||o.m){const m=document.createElement('small');m.style.display='block';m.textContent=(o.d?o.d+' · ':'')+(o.m||'');s.append(m)}
+    if(o.id){const im=document.createElement('img');im.style.cssText='display:block;max-width:100%;max-height:220px;border-radius:10px;margin-top:6px';im.hidden=true;im.onerror=()=>im.hidden=true;get('pi'+o.id).then(d=>{if(d){im.src=d;im.hidden=false}});s.append(im)}
+    r.append(s);
+    if(ed){const x=document.createElement('button');x.className='kx';x.textContent='🗑️';cf(x,'🗑️',()=>{if(o.id)set('pi'+o.id,null);PK.splice(i,1);set('PK',PK);pcl();sts()});r.append(x)}el.append(r)})}
+$('#pcp').onclick=()=>$('#pci').click();
+$('#pci').onchange=e=>{pcf=e.target.files[0]||null;$('#pcp').textContent=pcf?'📷 เลือกรูปแล้ว ✓':'📷 แนบรูป';e.target.value=''};
+$('#pca').onclick=async()=>{const n=$('#pcn').value.trim();if(!n)return toast('พิมพ์ชื่อสถานที่ก่อนนะ');const o={n,d:$('#pcd').value,m:$('#pcm').value.trim()};
+  if(pcf){o.id=Date.now().toString(36);set('pi'+o.id,await cmpI(pcf,900));pcf=null;$('#pcp').textContent='📷 แนบรูป'}
+  PK.push(o);set('PK',PK);['#pcn','#pcd','#pcm'].forEach(k=>$(k).value='');pcl();sts()};
+function sts(){const nd=Object.keys(NT).length,ph=P.filter(x=>x).length,lk=Object.values(LK).reduce((a,b)=>a+b,0),st=stk(),dy=Math.floor((Date.now()-new Date(2024,9,17))/864e5),rn=R.filter(x=>x).length,dn=K.filter(x=>x.d).length;
+  $('#sts').innerHTML=`💕 คบกันมา <b>${dy}</b> วัน<br>💗 ส่งรัก <b>${LC}</b> ครั้ง<br>📸 รูปในอัลบั้ม <b>${ph}</b> · ❤️ ถูกใจ <b>${lk}</b><br>📝 จดโน๊ต <b>${nd}</b> วัน · 🔥 สตรีค <b>${st}</b> วัน<br>🏆 ปลดรางวัล <b>${rn}</b>/3 · ✅ เช็คลิสต์ <b>${dn}</b>/${K.length}<br>🎵 เพลง <b>${PL.length}</b> · 📍 สถานที่ <b>${PK.length}</b>`;
+  const g=$('#bdg');g.innerHTML='';[['💞','ครบ 2 ปี',dy>=730],['💗','ส่งรักครบ 100',LC>=100],['📸','อัลบั้ม 10 รูป',ph>=10],['📝','จดโน๊ต 7 วัน',nd>=7],['🔥','สตรีค 7 วัน',st>=7],['🏆','ปลดรางวัลครบ 3',rn>=3],['✅','เช็คลิสต์ 10 ข้อ',dn>=10],['🎵','เพลย์ลิสต์ 5 เพลง',PL.length>=5],['📍','ไปมาแล้ว 5 ที่',PK.length>=5]].forEach(([e,t,o])=>{const c=document.createElement('span');c.className='chip';c.textContent=(o?e:'🔒')+' '+t;if(!o)c.style.opacity='.55';g.append(c)})}
+
+
+
+// 📆 วันนี้เมื่อปีที่แล้ว
+function oty(){const el=$('#oty');if(!el)return 0;el.innerHTML='';const n=new Date(),y=n.getFullYear(),md=String(n.getMonth()+1).padStart(2,'0')+'-'+String(n.getDate()).padStart(2,'0'),it=[];
+  const ok=d=>typeof d=='string'&&d.slice(5)==md&&+d.slice(0,4)<y;
+  for(let i=0;i<N;i++)if(ok(PD[i])&&(P[i]||V[i]))it.push({d:PD[i],k:'p',i});
+  PK.forEach(o=>ok(o.d)&&it.push({d:o.d,k:'k',o}));
+  Object.keys(NT).forEach(d=>ok(d)&&NT[d]&&it.push({d,k:'n',t:NT[d]}));
+  VC.forEach(o=>ok(o.d)&&it.push({d:o.d,k:'v',o}));
+  EV.forEach(o=>ok(o.d)&&it.push({d:o.d,k:'e',o}));
+  if(!it.length){el.innerHTML='<div style="font-size:14px;opacity:.7;padding:6px 0">ยังไม่มีความทรงจำของวันนี้ในปีก่อนๆ 🌷<br>ใส่วันที่ให้รูปในอัลบั้ม (กด ✏️ แก้ไข) หรือจดโน๊ต/สถานที่ไว้ แล้ววันนี้ของปีหน้าจะมาโผล่ที่นี่</div>';return 0}
+  it.sort((a,b)=>a.d<b.d?1:-1);let last='';
+  it.forEach(x=>{if(x.d!=last){last=x.d;const h=document.createElement('div');h.className='otg';h.textContent='💞 เมื่อ '+(y-+x.d.slice(0,4))+' ปีที่แล้ว · '+pdf(x.d);el.append(h)}
+    const r=document.createElement('div');r.className='oti';
+    if(x.k=='p'){if(P[x.i]){const im=document.createElement('img');im.src=P[x.i];im.onclick=()=>{go('album');show(x.i)};r.append(im)}else r.append('🎬 วิดีโอหน้า '+(x.i+1)+' ');r.append(C[x.i]||'')}
+    else if(x.k=='k')r.textContent='📍 '+x.o.n+(x.o.m?' · '+x.o.m:'');
+    else if(x.k=='n')r.textContent='📝 '+(x.t.length>140?x.t.slice(0,140)+'…':x.t);
+    else if(x.k=='v')r.textContent='🎙️ ไดอารี่เสียง '+(x.o.w||'')+' '+(x.o.t||'');
+    else r.textContent='📅 '+x.o.t;
+    el.append(r)});
+  return it.length}
+
+// ❌⭕ XO มังกร vs แยม
+{const b=$('#zxb'),st=$('#zxs'),M=['🐲','🍓'],WL=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];let bd,tn,ov;
+  const FF=['กอดแน่นๆ 10 วินาที 🤗','หอมแก้มหนึ่งที 😚','นวดไหล่ 2 นาที 💆','พูด "รักนะ" ด้วยเสียงตลกๆ 🥹','บอกสิ่งที่ชอบในตัวอีกฝ่าย 3 ข้อ 💗','เลี้ยงขนมหรือเครื่องดื่ม 🧋','ชมอีกฝ่ายต่อเนื่อง 30 วินาที 🌷','จูงมือเดินรอบห้อง 🚶','เต้นให้ดู 1 เพลง 💃','ถ่ายรูปคู่ท่าน่ารักๆ 📸'];
+  function rd(w){b.innerHTML='';bd.forEach((v,i)=>{const c=document.createElement('button');c.className='b'+(w&&w.includes(i)?' pk':'');c.textContent=v;c.onclick=()=>mv(i);b.append(c)})}
+  function mv(i){if(ov||bd[i])return;bd[i]=M[tn];const w=WL.find(l=>l.every(k=>bd[k]==M[tn]));
+    if(w){ov=1;st.textContent=`🎉 ${M[tn]} ชนะ! ${M[1-tn]} ต้อง: ${FF[Math.random()*FF.length|0]}`}
+    else if(bd.every(x=>x)){ov=1;st.textContent='🤝 เสมอ! กอดกันหนึ่งทีเป็นรางวัล 🤗'}
+    else{tn=1-tn;st.textContent='ตาของ '+M[tn]}rd(w)}
+  function rs(){bd=Array(9).fill('');tn=0;ov=0;st.textContent='ตาของ 🐲';rd()}
+  $('#zxr').onclick=rs;rs()}
+
+// ⚡ แตะเร็วชิงหัวใจ
+{let a=0,c=0,t=0,on=0;const A=$('#ztA'),B=$('#ztB'),I=$('#ztc'),g=$('#ztg');
+  const ud=()=>{A.textContent='🐲 '+a;B.textContent='🍓 '+c;if(on)I.textContent='⏱️ '+t};
+  A.onclick=()=>{if(on){a++;ud()}};B.onclick=()=>{if(on){c++;ud()}};
+  g.onclick=()=>{if(on||g.disabled)return;g.disabled=true;a=c=0;ud();let n=3;I.textContent='เตรียมตัว... 3';
+    const cd=setInterval(()=>{n--;if(n>0){I.textContent='เตรียมตัว... '+n;return}clearInterval(cd);on=1;t=10;ud();
+      const iv=setInterval(()=>{t--;if(t>0){ud();return}clearInterval(iv);on=0;g.disabled=false;ud();
+        I.textContent=a==c?`🤝 เสมอ ${a}-${c} · กอดกันหนึ่งที`:`🎉 ${a>c?'🐲':'🍓'} ชนะ ${Math.max(a,c)}-${Math.min(a,c)} · ผู้ชนะขอได้ 1 ข้อ 💗`},1000)},1000)}}
+
+// 🐍 งูกินหัวใจ
+{const cv=$('#zsc'),cx=cv.getContext('2d'),G=15,S=20,col=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  let sn=[[7,7]],dr=[1,0],nd=[1,0],fd=[3,3],sc=0,iv=0,run=0,bs=0;
+  get('SNB').then(v=>{bs=v||0;$('#zsb').textContent=bs});
+  const rr=(x,y,w,h,r)=>cx.roundRect?cx.roundRect(x,y,w,h,r):cx.rect(x,y,w,h);
+  function draw(){cx.fillStyle=col('--bg')||'#fff6f0';cx.fillRect(0,0,300,300);cx.font='17px serif';cx.textAlign='center';cx.textBaseline='middle';
+    sn.forEach((p,i)=>{cx.fillStyle=col(i?'--pink2':'--acc')||'#ff8fab';cx.beginPath();rr(p[0]*S+1,p[1]*S+1,S-2,S-2,6);cx.fill()});
+    cx.fillText('💗',fd[0]*S+10,fd[1]*S+11);cx.fillText('🐲',sn[0][0]*S+10,sn[0][1]*S+11)}
+  function food(){do{fd=[Math.random()*G|0,Math.random()*G|0]}while(sn.some(p=>p[0]==fd[0]&&p[1]==fd[1]))}
+  function end(){clearInterval(iv);run=0;$('#zsg').textContent='🔄 เล่นอีกครั้ง';
+    if(sc>bs){bs=sc;set('SNB',bs);$('#zsb').textContent=bs;toast('🏆 สถิติใหม่! '+sc+' 💗')}else toast('💔 จบเกม ได้ '+sc+' 💗')}
+  function step(){if(!$('#sum').classList.contains('on')){clearInterval(iv);run=0;return}
+    dr=nd;const h=[sn[0][0]+dr[0],sn[0][1]+dr[1]];
+    if(h[0]<0||h[1]<0||h[0]>=G||h[1]>=G||sn.some(p=>p[0]==h[0]&&p[1]==h[1]))return end();
+    sn.unshift(h);if(h[0]==fd[0]&&h[1]==fd[1]){sc++;$('#zss').textContent=sc;food();if(sc%5==0){clearInterval(iv);iv=setInterval(step,Math.max(70,150-sc*3))}}else sn.pop();draw()}
+  function turn(x,y){if(x==-dr[0]&&y==-dr[1])return;nd=[x,y]}
+  $('#zsg').onclick=()=>{clearInterval(iv);sn=[[7,7],[6,7],[5,7]];dr=nd=[1,0];sc=0;$('#zss').textContent=0;food();draw();run=1;$('#zsg').textContent='⏸ กำลังเล่น...';iv=setInterval(step,150)};
+  document.querySelectorAll('[data-z]').forEach(b=>b.onclick=()=>{const[x,y]=b.dataset.z.split(',').map(Number);turn(x,y)});
+  document.addEventListener('keydown',e=>{if(!run)return;const m={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0]}[e.key];if(m){e.preventDefault();turn(...m)}});
+  let sx=0,sy=0;cv.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+  cv.addEventListener('touchend',e=>{const x=e.changedTouches[0].clientX-sx,y=e.changedTouches[0].clientY-sy;if(Math.max(Math.abs(x),Math.abs(y))<20)return;Math.abs(x)>Math.abs(y)?turn(x>0?1:-1,0):turn(0,y>0?1:-1)},{passive:true});
+  draw()}
+
+// ล้างสถิติที่กดตอนทดสอบ (ไม่ลบรูป จดหมาย โน๊ต เสียง เพลง สถานที่)
+cf($('#rst'),'🧹 ล้างสถิติทดสอบ',()=>{LC=0;set('LC',0);best=0;set('best',0);SW={p:0,d:'',a:[]};set('SW',SW);ST={};set('ST',ST);LK={};set('LK',LK);MD={};set('MD',MD);SD={};set('SD',SD);
+  K.forEach(x=>x.d=0);set('K',K);HK.forEach(x=>x.d=0);set('HK',HK);Object.values(GF).forEach(g=>g.f=0);set('GF',GF);B.forEach(b=>b.i.forEach(o=>o.c=0));set('B',B);
+  R=[0,0,0];gs=gn=0;gm(0);fill();kl();hkl();bd();ex();$('#sgp').hidden=true;toast('🧹 ล้างสถิติที่กดทดสอบแล้ว (ส่งรัก คะแนน สตรีค ถูกใจ ปฏิทิน ติ๊กเช็คลิสต์)')});
+
+// ซิงก์ข้ามเครื่อง (Supabase) — ใส่ URL/key ได้ในปุ่ม ⚙️ หรือแก้ CFG ตรงนี้
+const CFG={u:'https://gzhgjdtozmqgmvdpicjr.supabase.co',k:'sb_publishable_PXTInKNDfMYjwrPAqBAWBg_963hkgE9'};
+const lsg=(k,v)=>{try{return v===undefined?localStorage.getItem(k):v===null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}};
+let CF=null,SY=0,LS=lsg('ls')||'',PQ={},MY={};const QT={};
+try{CF=JSON.parse(lsg('cfg')||'null')}catch(e){}
+{const m=location.hash.match(/cfg=([^&]+)/);if(m)try{CF=JSON.parse(atob(m[1]));lsg('cfg',JSON.stringify(CF));history.replaceState(null,'',location.pathname+location.search)}catch(e){}}
+if(!CF&&CFG.u)CF=CFG;
+const rq=(p,o={})=>fetch(CF.u+p,{...o,headers:{apikey:CF.k,...(CF.k.startsWith('eyJ')?{Authorization:'Bearer '+CF.k}:{}),...(o.headers||{})}});
+const sst=t=>{$('#sgt').textContent=CF?'☁️ '+t:'ยังไม่เชื่อมต่อ (ใช้ข้อมูลในเครื่องนี้)';$('#sgb').textContent=CF?(t[0]=='⚠'?'⚠️':'☁️'):'⚙️'};
+async function push(k,v){if(!CF)return;try{let val=v;
+  if(v instanceof Blob){const p=k+'-'+Date.now().toString(36),r=await rq('/storage/v1/object/media/'+p,{method:'POST',headers:{'Content-Type':v.type||'application/octet-stream','x-upsert':'true'},body:v});if(!r.ok)throw 0;MY[k]=p;val={$b:p}}
+  const r=await rq('/rest/v1/kv?on_conflict=key',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'resolution=merge-duplicates,return=minimal'},body:JSON.stringify({key:k,value:val})});
+  if(!r.ok)throw 0;sst('✅ ซิงก์แล้ว')}catch(e){PQ[k]=v;sst('⚠️ ส่งไม่สำเร็จ (จะลองใหม่)')}}
+function rsy(k,v){if(!CF||k=='TM'||k=='fx')return;clearTimeout(QT[k]);QT[k]=setTimeout(()=>push(k,v),900)}
+const typing=()=>{const a=document.activeElement;return a&&(a.isContentEditable||/^(INPUT|TEXTAREA)$/.test(a.tagName))};
+async function ref(){if(typing()){setTimeout(ref,3000);return}await loadAll(0);
+  if($('#album').classList.contains('on'))show(Math.min(cur,N-1));else if($('#sum').classList.contains('on')){fill();fav();kl();ex();rw()}}
+async function pull(){if(!CF||SY||document.hidden)return;SY=1;try{
+  for(const k in PQ){const v=PQ[k];delete PQ[k];push(k,v)}
+  const r=await rq('/rest/v1/kv?select=key,value,updated_at&order=updated_at.asc'+(LS?'&updated_at=gt.'+encodeURIComponent(LS):''));
+  if(!r.ok)throw 0;const rows=await r.json();let ch=0;
+  for(const x of rows){if(x.updated_at>LS)LS=x.updated_at;let v=x.value;
+    if(v&&v.$b){if(MY[x.key]==v.$b)continue;try{v=await(await fetch(CF.u+'/storage/v1/object/public/media/'+v.$b)).blob()}catch(e){continue}}
+    else if(JSON.stringify(v)==JSON.stringify(mem[x.key]))continue;
+    loc(x.key,v);ch++}
+  lsg('ls',LS);sst('✅ ซิงก์แล้ว '+new Date().toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'}));if(ch)ref()}
+  catch(e){sst('⚠️ เชื่อมต่อไม่ได้ (จะลองใหม่)')}SY=0}
+async function pushAll(){const d=await idb;if(!d)return;const ks=await new Promise(r=>{const q=d.transaction('k').objectStore('k').getAllKeys();q.onsuccess=()=>r(q.result)});
+  for(const k of ks){if(k=='TM'||k=='fx')continue;const v=await get(k);if(v!=null)await push(k,v)}toast('⬆️ ส่งข้อมูลทั้งหมดขึ้นแล้ว')}
+$('#sgb').onclick=()=>{$('#sgp').hidden=!$('#sgp').hidden;$('#thp').hidden=true};
+$('#thb').onclick=()=>{$('#thp').hidden=!$('#thp').hidden;$('#sgp').hidden=true};
+$('#sgs').onclick=()=>{const u=$('#sgu').value.trim().replace(/\/$/,''),k=$('#sgk').value.trim();
+  if(!u||!k){CF=null;lsg('cfg',null);sst('');return}CF={u,k};lsg('cfg',JSON.stringify(CF));LS='';lsg('ls',null);sst('กำลังเชื่อมต่อ...');pull()};
+$('#sga').onclick=()=>{if(!CF)return toast('ใส่ URL และ key แล้วกดบันทึกก่อนนะ');pushAll()};
+$('#sgl').onclick=()=>{if(!CF)return toast('ยังไม่ได้ตั้งค่าซิงก์');const o=$('#sgo');o.value=location.href.split('#')[0]+'#cfg='+btoa(JSON.stringify(CF));o.select();toast('คัดลอกลิงก์ในช่องนี้ส่งให้แฟน เปิดครั้งเดียวก็ตั้งค่าให้อัตโนมัติ')};
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)pull()});
+if(CF){$('#sgu').value=CF.u;$('#sgk').value=CF.k}sst('');
+
+// หัวใจเด้งเวลาแตะ
+document.addEventListener('pointerdown',e=>{const h=document.createElement('span');h.className='pop';h.textContent=['💗','✨','🌷'][Math.random()*3|0];
+  h.style.left=e.clientX+'px';h.style.top=e.clientY+'px';document.body.append(h);setTimeout(()=>h.remove(),900)});
+
+async function loadAll(g){N=(await get('N'))||20;await Promise.all([...Array(N).keys()].map(async i=>{P[i]=await get('p'+i);V[i]=(await get('v'+i))||null;C[i]=(await get('c'+i))||'';PD[i]=(await get('pd'+i))||''}));
+  L=(await get('L'))||'';best=(await get('best'))||0;
+  F=(await get('F'))||F;K=(await get('K'))||K;B=(await get('B'))||B;NT=(await get('NT'))||NT;SW=(await get('SW'))||SW;SP=(await get('SP'))||SP;LC=(await get('LC'))||0;D=(await get('D'))||D;FD=(await get('FD'))||FD;VC=(await get('VC'))||VC;EV=(await get('EV'))||EV;GF=(await get('GF'))||GF;ST=(await get('ST'))||ST;PK=(await get('PK'))||PK;WH=(await get('WH'))||WH;LU=(await get('LU'))||'';W=(await get('WY'))||W;HK=(await get('HK'))||HK;PL=(await get('PL'))||PL;Q=(await get('Q'))||Q;LK=(await get('LK'))||LK;MD=(await get('MD'))||MD;SD=(await get('SD'))||SD;TM=(await get('TM'))||'auto';if(await get('fx'))$('#fx').hidden=true;for(let i=0;i<3;i++){RT[i]=(await get('rt'+i))||''}
+  rw();if(g){mstart();qshow()}applyTh()}
+loadAll(1).then(()=>{pull();setInterval(pull,12000)});
+</script></body></html>
