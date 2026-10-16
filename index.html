@@ -672,15 +672,23 @@ cf($('#rst'),'🧹 ล้างสถิติทดสอบ',()=>{LC=0;set('LC
 
 
 // มินิเกมระบายอารมณ์
-let vk=0;
+let vk=0,VTI='';
 function vg(t){const b=$('#vgm');clearInterval(vk);b.innerHTML='';[0,1,2].forEach(i=>$('#vt'+i).className='b'+(i==t?' pk':''));
   if(t==0){const i=document.createElement('input'),g=document.createElement('button'),a=document.createElement('div');i.placeholder='พิมพ์สิ่งที่หงุดหงิด เช่น งานเยอะ...';i.maxLength=40;g.className='b pk';g.textContent='เริ่มทุบ!';a.style.cssText='position:relative;margin:12px 0;min-height:160px';
+    const pr=document.createElement('div'),pf=document.createElement('input'),pb=document.createElement('button'),pc=document.createElement('button');
+    pr.style.cssText='margin:8px 0';pf.type='file';pf.accept='image/*';pf.hidden=true;pb.className='b';pc.className='b';pb.textContent='📷 ใส่รูปที่อยากทุบ';pc.textContent='↩️ ใช้ 👹 เหมือนเดิม';
+    const rp=()=>{a.innerHTML='';pc.hidden=!VTI;if(VTI){const im=new Image();im.src=VTI;im.draggable=false;im.style.cssText='width:96px;height:96px;object-fit:cover;border-radius:50%;border:4px solid var(--line);display:block;margin:0 auto'; a.append(im)}};
+    get('VTI').then(v=>{VTI=v||'';rp()});
+    pb.onclick=()=>pf.click();
+    pf.onchange=async()=>{const f=pf.files[0];if(!f)return;VTI=await cmpI(f,320);set('VTI',VTI);pf.value='';rp();toast('ใส่รูปแล้ว พร้อมทุบ 👊')};
+    pc.onclick=()=>{VTI='';set('VTI',null);rp()};
+    pr.append(pb,' ',pc,pf);
     g.onclick=()=>{let hp=30;a.innerHTML='';const m=document.createElement('div'),n=document.createElement('div'),h=document.createElement('div'),f=document.createElement('i');
-      m.textContent='👹';m.style.cssText='font-size:84px;cursor:pointer;user-select:none;touch-action:manipulation;transition:transform .08s';n.textContent=i.value.trim()||'ความหงุดหงิด';n.style.cssText='font-weight:600;margin:6px 0';h.className='pbar';f.style.width='100%';h.append(f);
-      m.onpointerdown=e=>{e.preventDefault();if(hp<=0)return;hp--;f.style.width=hp/30*100+'%';m.style.transform='rotate('+(Math.random()*20-10)+'deg) scale(.9)';setTimeout(()=>m.style.transform='',80);navigator.vibrate&&navigator.vibrate(15);
+      if(VTI){const im=new Image();im.src=VTI;im.draggable=false;im.style.cssText='width:120px;height:120px;object-fit:cover;border-radius:50%;border:4px solid var(--line);pointer-events:none;display:block;margin:0 auto';m.append(im)}else m.textContent='👹';m.style.cssText='font-size:84px;cursor:pointer;user-select:none;touch-action:manipulation;transition:transform .08s';n.textContent=i.value.trim()||'ความหงุดหงิด';n.style.cssText='font-weight:600;margin:6px 0';h.className='pbar';f.style.width='100%';h.append(f);
+      m.onpointerdown=e=>{e.preventDefault();if(hp<=0)return;hp--;f.style.width=hp/30*100+'%';m.style.transform='rotate('+(Math.random()*20-10)+'deg) scale(.9)';setTimeout(()=>m.style.transform='',80);const hi=m.firstElementChild;if(hi&&hi.tagName=='IMG'){hi.style.filter='sepia(1) saturate(5) hue-rotate(-40deg)';setTimeout(()=>hi.style.filter='',90)}navigator.vibrate&&navigator.vibrate(15);
         const d=document.createElement('span');d.textContent=['💥','👊','💢','⚡'][Math.random()*4|0];d.style.cssText='position:absolute;font-size:28px;pointer-events:none;left:'+(30+Math.random()*40)+'%;top:'+Math.random()*60+'px';a.append(d);setTimeout(()=>d.remove(),400);
         if(!hp){m.textContent='💨';conf();n.textContent='เก่งมาก! ความหงุดหงิดแตกกระจายแล้ว 🎉 หายใจลึกๆ แล้วดื่มน้ำสักแก้วนะ 💗'}};
-      a.append(m,n,h)};b.append(i,g,a)}
+      a.append(m,n,h)};b.append(i,g,pr,a)}
   else if(t==1){const m=document.createElement('div'),g=document.createElement('div'),r=document.createElement('button');let n=36;m.style.cssText='min-height:28px;font-weight:600;color:var(--acc)';g.style.cssText='display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:10px 0';r.className='b';r.textContent='🔄 เริ่มใหม่';r.onclick=()=>vg(1);
     for(let k=0;k<36;k++){const x=document.createElement('button');x.className='b';x.textContent='🫧';x.style.cssText='font-size:24px;padding:6px 0';x.onclick=()=>{x.textContent='💥';x.disabled=true;x.style.opacity='.4';navigator.vibrate&&navigator.vibrate(10);if(!--n){conf();m.textContent='แตกครบแล้ว! ใจเบาลงบ้างไหม 💗'}};g.append(x)}
     b.append(g,m,r)}
