@@ -119,11 +119,18 @@ body:not(.fabo) #thb,body:not(.fabo) #sgb{display:none}body.fabo #thb{left:54px}
 .tkc{background:var(--card);border:3px solid var(--line);border-radius:16px;padding:12px;margin:12px 0;text-align:left}.tkc .hd{font-size:13px;opacity:.8;margin-bottom:6px}
 .tkc .sc{margin:8px 0;white-space:pre-wrap;line-height:1.6}.tkc .sc b{display:block;font-size:12px;color:var(--acc)}.tkc .rp{background:var(--bg);border-radius:10px;padding:6px 10px;margin:6px 0;font-size:14px;white-space:pre-wrap;line-height:1.5}
 .nw{background:var(--pink2);color:#fff;border-radius:999px;padding:1px 8px;font-size:11px;margin-left:6px}
+.fl{transform-box:fill-box;transform-origin:center;animation:bl 1s cubic-bezier(.2,1.5,.4,1) both}@keyframes bl{from{transform:scale(0) rotate(-120deg);opacity:0}to{transform:none;opacity:1}}
+.bqs{transform-box:fill-box;transform-origin:50% 100%;animation:sw 5s ease-in-out 2s infinite}@keyframes sw{50%{transform:rotate(1.6deg)}}
+#bq{position:fixed;inset:0;z-index:300;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:16px;text-align:center;background:radial-gradient(circle at 50% 35%,var(--card),var(--bg) 70%);overflow:hidden;cursor:pointer}
+#bq h2{font-size:24px;margin:0;position:relative}#bq svg{max-width:min(92vw,430px);max-height:58vh;position:relative}
+#bqf{position:absolute;inset:0;pointer-events:none}#bqf span{position:absolute;top:-8vh;animation:pt linear infinite}
+.bqt{width:min(46vw,170px);margin:0 auto 6px}.bqc svg{max-width:340px}
 </style></head><body>
 
-<div id="fx"></div><div id="dec"></div>
+<div id="fx"></div>
+<div id="bq" hidden></div><div id="dec"></div>
 <section id="safe" class="scr on">
-  <h1>🐲 มังกร & แยม 🍓</h1>
+  <div id="bqt" class="bqt"></div><h1>🐲 มังกร & แยม 🍓</h1>
   <div id="thn" style="font-size:15px;margin:2px 0 6px"></div><div style="font-size:14px">ใส่รหัสผ่านเพื่อเปิดตู้เซฟแห่งความทรงจำ</div>
   <div class="safe" id="sf"><div class="in">💌</div>
     <div class="door"><div class="face" id="face">• ᴗ •</div><div class="dial">♥</div></div></div>
@@ -134,7 +141,7 @@ body:not(.fabo) #thb,body:not(.fabo) #sgb{display:none}body.fabo #thb{left:54px}
 
 <div id="bar" hidden>
   <button class="b" id="bL">🔒</button><button class="b" id="bA">📖 อัลบั้ม</button>
-  <button class="b" id="bS">💌 รวมเรา</button><button class="b" id="bT">💬 คุยกัน<span id="tkn"></span></button><button class="b" id="bF">🌸</button><button class="b" id="bM">🎵</button><button class="b" id="bP">▶️ สไลด์</button><button class="b pk" id="bE">✏️ แก้ไข</button>
+  <button class="b" id="bS">💌 รวมเรา</button><button class="b" id="bT">💬 คุยกัน<span id="tkn"></span></button><button class="b" id="bQ">💐</button><button class="b" id="bF">🌸</button><button class="b" id="bM">🎵</button><button class="b" id="bP">▶️ สไลด์</button><button class="b pk" id="bE">✏️ แก้ไข</button>
 </div>
 
 <section id="album" class="scr"><div class="wrap">
@@ -157,6 +164,7 @@ body:not(.fabo) #thb,body:not(.fabo) #sgb{display:none}body.fabo #thb{left:54px}
   <div id="tkl"></div>
 </div></section>
 <section id="sum" class="scr"><div class="wrap">
+  <div class="card bqc" id="bqc" hidden><div id="bqs2"></div><div style="font-size:15px;margin-top:4px">💐 สุขสันต์วันครบรอบนะคะ ขอให้เรารักกันแบบนี้ไปนานๆ 💗</div></div>
   <div class="card"><h2>🐲 เรารักกันมาแล้ว 🍓</h2><div class="big" id="days">0</div><div>วัน นับจาก 17 ต.ค. 2024</div><div id="xcd" style="margin-top:8px;font-size:14px;line-height:1.8"></div></div>
   <div class="card"><h2>📅 ไทม์ไลน์ & วันสำคัญ</h2><div style="font-size:13px;opacity:.7">นับถอยหลัง/นับวันที่ผ่านมา · ติ๊ก 🔒 เพื่อทำแคปซูลเวลา (ซ่อนข้อความจนถึงวันนั้น)</div><div id="evl" style="text-align:left"></div><div class="ea"><div class="addr"><input id="evd" type="date"><input id="evt" placeholder="เรื่องที่เกิดขึ้น / ข้อความ..."></div><div class="addr" style="align-items:center"><label><input type="checkbox" id="evc"> 🔒 แคปซูลเวลา</label><button class="b" id="eva">➕ เพิ่ม</button></div></div></div>
   <div class="card"><h2>🗓️ ปฏิทินความหวาน & อารมณ์</h2><div class="nav" style="margin:0 0 8px"><button class="b" id="cpv">◀</button><b id="cmt"></b><button class="b" id="cnx">▶</button></div><div class="cal" id="cal"></div><div id="cdt" style="margin-top:10px;font-size:14px"></div><div id="cmd"></div></div>
@@ -216,7 +224,7 @@ function key(k){if(k=='⌫')code=code.slice(0,-1);else if(k=='✕')code='';else 
 document.addEventListener('keydown',e=>{if($('#safe').classList.contains('on')){if(/^\d$/.test(e.key))key(+e.key);if(e.key=='Backspace')key('⌫')}
   else if($('#album').classList.contains('on')){if(e.key=='ArrowRight')nxt();if(e.key=='ArrowLeft')prv()}});
 function chk(){const s=$('#sf');
-  if(code==PW){s.classList.add('open');$('#face').textContent='♥ ᴗ ♥';$('#msg').textContent='ยินดีต้อนรับค่ะ 💕';setTimeout(()=>{go('album');show(0);const c=oty();if(c)toast('📆 วันนี้เมื่อปีที่แล้วเรามีความทรงจำ '+c+' อย่าง · ดูที่หน้ารวมเรา 💞')},1500)}
+  if(code==PW){s.classList.add('open');$('#face').textContent='♥ ᴗ ♥';$('#msg').textContent='ยินดีต้อนรับค่ะ 💕';setTimeout(()=>{go('album');show(0);annAuto();const c=oty();if(c)toast('📆 วันนี้เมื่อปีที่แล้วเรามีความทรงจำ '+c+' อย่าง · ดูที่หน้ารวมเรา 💞')},1500)}
   else{s.classList.add('shake');$('#face').textContent='• ︵ •';$('#msg').textContent='ผิดนะ 🥺 ใบ้: วันครบรอบของเรา (วว ดด ปปปป ค.ศ.)';
     setTimeout(()=>{s.classList.remove('shake');$('#face').textContent='• ᴗ •';key('✕')},700)}}
 
@@ -793,6 +801,32 @@ async function tkr(){
 $('#tfs').onclick=()=>{if(!ME)return toast('เลือกก่อนว่าคุณคือใคร');const v=['a','b','c','e'].map(k=>$('#tf'+k).value.trim());if(!v.some(x=>x))return toast('เขียนอย่างน้อยหนึ่งช่องก่อนนะ');
   const id=nid();set('tk_'+id,{id,w:ME,d:new Date().toISOString(),a:v[0],b:v[1],c:v[2],e:v[3]});['a','b','c','e'].forEach(k=>$('#tf'+k).value='');tkr()};
 $('#bT').onclick=()=>go('talk');
+
+// 💐 ดอกไม้วันครบรอบ
+const isAnn=()=>{const d=new Date(),k=(d.getMonth()+1)*100+d.getDate();return k>=1016&&k<=1018};
+function bqSvg(){
+  const P=[['#ff7aa2','#ffd0de'],['#ffc94d','#fff1b8'],['#b583ff','#e9d9ff'],['#ff6b6b','#ffc2c2'],['#6ec1ff','#d6efff'],['#ff9ecd','#ffe1ef']];
+  const F=[[200,108,74,12,0,.1],[112,172,58,10,1,.35],[290,170,60,10,2,.5],[60,262,44,8,3,.7],[340,262,46,8,4,.85],[160,252,52,11,5,.6],[245,258,50,9,0,.75],[200,196,42,8,1,.9]];
+  let s='<svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;overflow:visible"><g class="bqs">';
+  F.forEach(([x,y])=>s+=`<path d="M${x} ${y} Q${(x+200)/2} ${y+120} 200 400" stroke="#3f9a63" stroke-width="5" fill="none" stroke-linecap="round"/>`);
+  [[120,330,-40],[280,330,40],[90,300,-60],[310,300,60],[155,350,-25],[245,350,25]].forEach(([x,y,a])=>s+=`<ellipse cx="${x}" cy="${y}" rx="14" ry="34" fill="#4fb477" transform="rotate(${a} ${x} ${y})"/>`);
+  for(let i=0;i<22;i++){const a=i*2.4,r=95+(i%5)*14;s+=`<circle class="fl" style="animation-delay:${1+i*.04}s" cx="${200+Math.cos(a)*r*1.2}" cy="${215+Math.sin(a)*r*.62}" r="${3+i%3}" fill="#fff" stroke="#f3c6d6"/>`}
+  F.forEach(([x,y,r,n,c,d])=>{let p='';const [a,b]=P[c];
+    for(let i=0;i<n;i++)p+=`<ellipse cx="0" cy="${-r*.55}" rx="${r*.3}" ry="${r*.55}" fill="${b}" stroke="${a}" stroke-width="1.5" transform="rotate(${i*360/n})"/>`;
+    for(let i=0;i<n;i++)p+=`<ellipse cx="0" cy="${-r*.34}" rx="${r*.2}" ry="${r*.34}" fill="${a}" opacity=".85" transform="rotate(${(i+.5)*360/n})"/>`;
+    p+=`<circle r="${r*.2}" fill="#ffd54a" stroke="#e0a000" stroke-width="2"/>`;
+    for(let i=0;i<6;i++)p+=`<circle cx="${Math.cos(i)*r*.1}" cy="${Math.sin(i)*r*.1}" r="${r*.03}" fill="#e0a000"/>`;
+    s+=`<g transform="translate(${x} ${y})"><g class="fl" style="animation-delay:${d}s">${p}</g></g>`});
+  s+='<path d="M92 330 L200 470 L308 330 Q200 372 92 330Z" fill="#ffb3c6" stroke="#e0839e" stroke-width="3"/><path d="M130 378 Q200 400 270 378" stroke="#e0839e" stroke-width="3" fill="none"/>';
+  s+='<path d="M200 388 q-34 -22 -30 -44 q22 6 30 44 q8 -38 30 -44 q4 22 -30 44z" fill="#ff5c8a"/><circle cx="200" cy="384" r="8" fill="#e63962"/>';
+  return s+'</g></svg>'}
+function bloom(){const b=$('#bq'),ms=Date.now()-new Date(2024,9,17),dd=Math.floor(ms/864e5),y=Math.max(1,Math.round(ms/864e5/365.25));
+  b.innerHTML=`<div id="bqf"></div><h2>💐 สุขสันต์วันครบรอบ ${y} ปี 💐</h2>${bqSvg()}<div style="font-size:16px;line-height:1.7">มังกร 🐲 & แยม 🍓<br>รักกันมาแล้ว <b style="color:var(--acc)">${dd}</b> วัน ขอบคุณที่อยู่ข้างกันนะ 💗</div><div style="font-size:12px;opacity:.6;margin-top:8px">แตะที่ไหนก็ได้เพื่อปิด</div>`;
+  const f=$('#bqf');['🌸','🌷','🌹','💮','🌼','🌺'].forEach(e=>{for(let k=0;k<3;k++){const s=document.createElement('span');s.textContent=e;s.style.cssText=`left:${Math.random()*96}%;font-size:${18+Math.random()*20}px;animation-duration:${6+Math.random()*7}s;animation-delay:-${Math.random()*9}s`;f.append(s)}});
+  b.hidden=false;conf();b.onclick=()=>{b.hidden=true}}
+function annAuto(){if(isAnn()&&lsg('bqd')!=dk()){lsg('bqd',dk());setTimeout(bloom,600)}}
+$('#bQ').onclick=bloom;
+if(isAnn()){$('#bqt').innerHTML=bqSvg();$('#bqs2').innerHTML=bqSvg();$('#bqc').hidden=false}
 
 async function loadAll(g){N=(await get('N'))||20;await Promise.all([...Array(N).keys()].map(async i=>{P[i]=await get('p'+i);V[i]=(await get('v'+i))||null;C[i]=(await get('c'+i))||'';PD[i]=(await get('pd'+i))||''}));
   L=(await get('L'))||'';best=(await get('best'))||0;
