@@ -125,10 +125,13 @@ body:not(.fabo) #thb,body:not(.fabo) #sgb{display:none}body.fabo #thb{left:54px}
 #bq h2{font-size:24px;margin:0;position:relative}#bq svg{max-width:min(92vw,430px);max-height:58vh;position:relative}
 #bqf{position:absolute;inset:0;pointer-events:none}#bqf span{position:absolute;top:-8vh;animation:pt linear infinite}
 .bqt{width:min(46vw,170px);margin:0 auto 6px}.bqc svg{max-width:340px}
+#who{position:fixed;inset:0;z-index:350;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:20px}
+#who .wb{background:var(--card);border:3px solid var(--line);border-radius:18px;padding:18px;max-width:340px;text-align:center;line-height:1.6;font-size:14px}#who h2{margin:0 0 8px;font-size:20px}
 </style></head><body>
 
 <div id="fx"></div>
-<div id="bq" hidden></div><div id="dec"></div>
+<div id="bq" hidden></div>
+<div id="who" hidden></div><div id="dec"></div>
 <section id="safe" class="scr on">
   <div id="bqt" class="bqt"></div><h1>🐲 มังกร & แยม 🍓</h1>
   <div id="thn" style="font-size:15px;margin:2px 0 6px"></div><div style="font-size:14px">ใส่รหัสผ่านเพื่อเปิดตู้เซฟแห่งความทรงจำ</div>
@@ -200,6 +203,7 @@ body:not(.fabo) #thb,body:not(.fabo) #sgb{display:none}body.fabo #thb{left:54px}
   <div class="card"><h2>🍜 วันนี้กินอะไรดี?</h2><div id="xfr" class="mas" style="font-size:30px;font-weight:600;min-height:44px;margin:8px 0;color:var(--acc)">❓</div><div><button class="b pk" id="xfg">🎲 สุ่มเมนู</button></div><div class="ea"><div style="font-weight:600;margin:12px 0 6px;text-align:left">⚙️ รายการอาหาร (แก้ ลบ เพิ่มได้)</div><div id="xfl" style="max-height:300px;overflow-y:auto;text-align:left"></div></div></div>
   <div class="card"><h2>🃏 สุ่มการ์ดความรัก</h2><div style="font-size:13px;opacity:.7">♥ ต้องทำให้กัน · ♦ รางวัล · ♠ กิจกรรม · ♣ มุกจีบ</div><div class="addr" style="justify-content:center;align-items:center;margin:10px 0"><span>จั่ว</span><button class="b" id="xkm">−</button><b id="xkv" style="min-width:28px;font-size:20px">1</b><button class="b" id="xkp">＋</button><span>ใบ</span><button class="b pk" id="xkg">🃏 จั่วการ์ด</button></div><div style="font-size:13px">แตะไพ่ใบไหนก็ได้เพื่อเปิดดู · เหลือ <b id="xrm">52</b> ใบ <button class="b" id="xsh" style="padding:2px 10px;margin-left:6px">🔀 สับ/คว่ำใหม่</button></div><div class="dk" id="xdk"></div><div id="xkr"></div>
     <div class="ea"><div style="font-weight:600;margin:14px 0 6px;text-align:left">⚙️ คลังการ์ด (<span id="xkc">52</span> ใบ)</div><div class="addr"><select id="xks" class="ta" style="width:auto;margin:0"><option value="♥">♥ ต้องทำให้กัน</option><option value="♦">♦ รางวัล</option><option value="♠">♠ กิจกรรม</option><option value="♣">♣ มุกจีบ</option><option value="★">★ อื่นๆ</option></select><input id="xki" placeholder="ข้อความการ์ดใหม่..."><button class="b" id="xka">➕</button></div><div id="xkl" style="max-height:340px;overflow-y:auto;text-align:left;margin-top:8px"></div><div style="margin-top:8px"><button class="b" id="xkd">↺ คืนค่าสำรับมาตรฐาน 52 ใบ</button></div></div></div>
+  <div class="card"><h2>👀 เข้าล่าสุด</h2><div style="font-size:12px;opacity:.7;line-height:1.6">ระบบบันทึกเวลาเข้าเว็บล่าสุดของทั้งสองคน และทั้งคู่เห็นข้อมูลนี้เหมือนกัน</div><div style="margin:8px 0"><button class="b" id="sbt">👀 แสดง</button></div><div id="sbb" hidden style="line-height:1.9"></div></div>
   <div class="card"><h2>🎙️ ไดอารี่เสียง</h2><div style="display:flex;gap:6px;justify-content:center;margin:6px 0"><button class="b xw pk" data-w="🐲">🐲 มังกร</button><button class="b xw" data-w="🍓">🍓 แยม</button><button class="b xw" data-w="💞">💞 ทั้งคู่</button></div><div><button class="b pk" id="xrc">⏺ อัดเสียง</button> <button class="b" id="xrf">📁 เลือกไฟล์เสียง</button></div><div id="xrt" style="min-height:22px;font-size:13px;margin:6px 0"></div><div class="addr"><input id="xvf" type="date"><button class="b" id="xvx">ล้างตัวกรอง</button></div><div id="xvl" style="max-height:340px;overflow-y:auto;text-align:left"></div><input type="file" id="xaf" accept="audio/*" hidden></div>
   <div class="card"><h2>🎁 สุ่มเหตุผลที่เค้ารักเบบี๋</h2><div id="why" style="min-height:48px;margin-bottom:8px">กดปุ่มเลย 👇</div><button class="b pk" id="wy">🎲 สุ่ม</button><div class="ea"><div style="font-weight:600;margin:12px 0 6px;text-align:left">⚙️ รายการเหตุผล (แก้ ลบ เพิ่มได้)</div><div id="wyl" style="max-height:300px;overflow-y:auto;text-align:left"></div></div></div>
 </div></section>
@@ -224,7 +228,7 @@ function key(k){if(k=='⌫')code=code.slice(0,-1);else if(k=='✕')code='';else 
 document.addEventListener('keydown',e=>{if($('#safe').classList.contains('on')){if(/^\d$/.test(e.key))key(+e.key);if(e.key=='Backspace')key('⌫')}
   else if($('#album').classList.contains('on')){if(e.key=='ArrowRight')nxt();if(e.key=='ArrowLeft')prv()}});
 function chk(){const s=$('#sf');
-  if(code==PW){s.classList.add('open');$('#face').textContent='♥ ᴗ ♥';$('#msg').textContent='ยินดีต้อนรับค่ะ 💕';setTimeout(()=>{go('album');show(0);annAuto();const c=oty();if(c)toast('📆 วันนี้เมื่อปีที่แล้วเรามีความทรงจำ '+c+' อย่าง · ดูที่หน้ารวมเรา 💞')},1500)}
+  if(code==PW){s.classList.add('open');$('#face').textContent='♥ ᴗ ♥';$('#msg').textContent='ยินดีต้อนรับค่ะ 💕';setTimeout(()=>{go('album');show(0);annAuto();seenT();seenW();const c=oty();if(c)toast('📆 วันนี้เมื่อปีที่แล้วเรามีความทรงจำ '+c+' อย่าง · ดูที่หน้ารวมเรา 💞')},1500)}
   else{s.classList.add('shake');$('#face').textContent='• ︵ •';$('#msg').textContent='ผิดนะ 🥺 ใบ้: วันครบรอบของเรา (วว ดด ปปปป ค.ศ.)';
     setTimeout(()=>{s.classList.remove('shake');$('#face').textContent='• ᴗ •';key('✕')},700)}}
 
@@ -360,7 +364,7 @@ function chips(el,arr,key,ph){el.innerHTML='';const w=document.createElement('di
   arr.forEach((t,k)=>{const s=document.createElement('span');s.className='chip';s.textContent=t+(ed?' ✕':'');if(ed)s.onclick=()=>{arr.splice(k,1);set(key,arr);chips(el,arr,key,ph)};w.append(s)});el.append(w);
   if(ed){const r=document.createElement('div'),i=document.createElement('input'),a=document.createElement('button');r.className='addr';i.placeholder=ph;a.className='b';a.textContent='➕';
     const add=()=>{const v=i.value.trim();if(v){arr.push(v);set(key,arr);chips(el,arr,key,ph)}};a.onclick=add;i.onkeydown=e=>{if(e.key=='Enter')add()};r.append(i,a);el.append(r)}}
-function ex(){cdn();lt();dcv();sts();pcl();whd();rows($('#whe'),WH,'WH','เพิ่มตัวเลือกใหม่...');rows($('#wyl'),W,'WY','เพิ่มเหตุผลใหม่...');pll();hkl();qshow();evl();cal();bd();swt();nts();dlib();vcl();rows($('#xfl'),FD,'FD','เพิ่มอาหารใหม่...');chips($('#xsp'),SP,'SP','เพิ่มภารกิจความหวานใหม่...')}
+function ex(){seenR();cdn();lt();dcv();sts();pcl();whd();rows($('#whe'),WH,'WH','เพิ่มตัวเลือกใหม่...');rows($('#wyl'),W,'WY','เพิ่มเหตุผลใหม่...');pll();hkl();qshow();evl();cal();bd();swt();nts();dlib();vcl();rows($('#xfl'),FD,'FD','เพิ่มอาหารใหม่...');chips($('#xsp'),SP,'SP','เพิ่มภารกิจความหวานใหม่...')}
 function bd(){const el=$('#xbt');el.innerHTML='';
   B.forEach((b,k)=>{const x=document.createElement('button');x.className='b'+(k==bi?' pk':'');x.textContent=b.n;x.onclick=()=>{bi=k;bd()};el.append(x)});
   if(ed){const x=document.createElement('button');x.className='b';x.textContent='➕ บอร์ดใหม่';x.onclick=()=>{B.push({n:'📌 บอร์ดใหม่',i:[]});bi=B.length-1;set('B',B);bd()};el.append(x)}
@@ -828,9 +832,25 @@ function annAuto(){if(isAnn()&&lsg('bqd')!=dk()){lsg('bqd',dk());setTimeout(bloo
 $('#bQ').onclick=bloom;
 if(isAnn()){$('#bqt').innerHTML=bqSvg();$('#bqs2').innerHTML=bqSvg();$('#bqc').hidden=false}
 
+// 👀 เข้าล่าสุด (โปร่งใส: ทั้งสองคนเห็นเหมือนกัน)
+let SO2=0,SLT=0;
+const ago=t=>{const s=(Date.now()-new Date(t))/1000;return s<60?'เมื่อสักครู่':s<3600?Math.floor(s/60)+' นาทีที่แล้ว':s<86400?Math.floor(s/3600)+' ชั่วโมงที่แล้ว':Math.floor(s/86400)+' วันที่แล้ว'};
+function seenT(){if(!ME||Date.now()-SLT<6e4)return;SLT=Date.now();set('seen_'+wk(ME),new Date().toISOString())}
+async function seenR(){const o=$('#sbb');if(!o)return;o.hidden=!SO2;$('#sbt').textContent=SO2?'🙈 ซ่อน':'👀 แสดง';if(!SO2)return;
+  const r=[];for(const w of ['🐲','🍓']){const t=await get('seen_'+wk(w));r.push(w+' '+tkN[w]+': '+(t?'เข้าล่าสุด '+tkd(t)+' ('+ago(t)+')':'ยังไม่มีข้อมูล'))}
+  o.innerHTML='';r.forEach(x=>o.append(mkel('div','',x)))}
+function seenW(){if(ME&&lsg('sn'))return;const o=$('#who'),b=mkel('div','wb');o.innerHTML='';
+  b.append(mkel('h2','','👀 ก่อนเข้า'),mkel('p','','เว็บนี้บันทึกเวลา เข้าล่าสุด ของทั้งสองคน และทั้งคู่เห็นข้อมูลนี้เหมือนกัน (ดูได้ที่หน้ารวมเรา การ์ด 👀 เข้าล่าสุด)'));
+  const done=()=>{lsg('sn','1');o.hidden=true;SLT=0;seenT();tkb()};
+  if(!ME){b.append(mkel('p','','ใครกำลังเปิดเว็บอยู่คะ?'));['🐲','🍓'].forEach(w=>{const x=mkel('button','b pk',w+' '+tkN[w]);x.onclick=()=>{ME=w;lsg('me',w);done()};b.append(x,' ')})}
+  else{const x=mkel('button','b pk','รับทราบ');x.onclick=done;b.append(x)}
+  o.append(b);o.hidden=false}
+$('#sbt').onclick=()=>{SO2=!SO2;seenR()};
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)seenT()});
+
 async function loadAll(g){N=(await get('N'))||20;await Promise.all([...Array(N).keys()].map(async i=>{P[i]=await get('p'+i);V[i]=(await get('v'+i))||null;C[i]=(await get('c'+i))||'';PD[i]=(await get('pd'+i))||''}));
   L=(await get('L'))||'';best=(await get('best'))||0;
   F=(await get('F'))||F;K=(await get('K'))||K;B=(await get('B'))||B;NT=(await get('NT'))||NT;SW=(await get('SW'))||SW;SP=(await get('SP'))||SP;LC=(await get('LC'))||0;D=(await get('D'))||D;FD=(await get('FD'))||FD;VC=(await get('VC'))||VC;EV=(await get('EV'))||EV;GF=(await get('GF'))||GF;ST=(await get('ST'))||ST;PK=(await get('PK'))||PK;WH=(await get('WH'))||WH;LU=(await get('LU'))||'';W=(await get('WY'))||W;HK=(await get('HK'))||HK;PL=(await get('PL'))||PL;Q=(await get('Q'))||Q;LK=(await get('LK'))||LK;MD=(await get('MD'))||MD;SD=(await get('SD'))||SD;TM=(await get('TM'))||'auto';if(await get('fx'))$('#fx').hidden=true;for(let i=0;i<3;i++){RT[i]=(await get('rt'+i))||''}
   rw();if(g){mstart();qshow()}applyTh()}
-loadAll(1).then(()=>{pull();setInterval(pull,12000);tkb();setInterval(tkb,15000)});
+loadAll(1).then(()=>{pull();setInterval(pull,12000);tkb();setInterval(tkb,15000);seenT()});
 </script></body></html>
